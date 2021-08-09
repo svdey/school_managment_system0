@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+      
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+        .grid
+  {min-height:70px;
+  background-color: #fff;
+  }
+  .input-group input-group-sm
+  {min-height:30px;
+  margin-left:200px;
+  
+  }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="grid">
+                   <div class="row">
+                     <div class="grid">
+                         home - <a href ="#">All Book List</a>
+                         <form class="form-inline" action="/action_page.php">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <strong>All Book List</strong>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text" class="form-control" id="email"
+                                                            placeholder="#ID Type Here..."name="ID">
+                                                    </div>
+                                                </div>
+                        </form>						
+              </div>
+            </div>	
+        <div class="container-fluid">           
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th><i class="far fa-square"></i>  Id  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Bookname  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Writer  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Subject  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Class  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Year  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Creating Date  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+             <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes  <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+             <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes  <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes  <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td>English Grammer</td>
+                  <td>John Smith</td>
+                  <td>English</td>
+                  <td>4</td>
+                  <td>2017</td>
+                  <td>24/08/17</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+          </table>
+        </div>
+              
+                <script>
+                    $(document).ready(function(){
+            $("#studentform").submit(function(e){
+            e.preventDefault()
+            let obj={}
+            let fd=new FormData(e.currentTarget)
+            fd.forEach((val,key)=>{
+            obj[key]=val
+            })
+            console.log(obj)
+            })
+                    });
+                </script>
+            
+         </section>
+         </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+  </body>
+
+</html>

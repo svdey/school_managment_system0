@@ -1,0 +1,175 @@
+@page { margin: 0 }
+
+@media print {
+  
+body.A4, body.A5.landscape { width: 210mm }
+
+.sheet {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always;
+}
+
+body.A5.landscape .sheet { width: 205mm !important; max-width: 205mm !important; height: 147mm }
+body.A4 .sheet { width: 210mm; height: 296mm }
+
+.sheet.padding-10mm { padding: 5mm }
+.padding-10mm { padding: 5mm }
+.printHide{ display: none; }
+
+}
+
+/* page loader */
+#loading-image {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 40%;
+    right: 47%;
+    z-index: 1;	
+        }
+
+span.glyphicon.scroll_bar
+{
+    color: red;
+}
+
+button.active{
+   background-color:  #3cbc52 !important;
+}
+ 
+.sidebar-menu 
+{
+    overflow:auto; 
+} 
+
+.neon{
+    background-color: #92053d !important;
+}
+
+/*.sidebar-collapse .sidebar-menu 
+{
+    overflow: hidden;
+ }*/
+
+#page-loader 
+{
+    background-image: url(../images/loading.gif) !important;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255,255,255,0.3);
+    z-index: 5000;
+}
+
+.hide
+{
+    display: none;
+}
+.clear-fix{
+    clear:both;
+}
+
+.addressToggle{
+   white-space: nowrap; 
+   width: 170px;  
+   overflow: hidden;
+   text-overflow:ellipsis;
+   display: inline-block;
+}
+
+.fullScreenTableView{
+    position: fixed;
+    background-color: white;
+    top: 50px;
+    left: 50px;
+    overflow: auto !important;
+}
+.dataTables_scroll.fullScreenTableView .dataTables_scrollHead{
+    position: relative;
+    border: 0px;
+    width: 100%;
+}
+.dataTables_scroll.fullScreenTableView .dataTables_scrollBody{
+    position: relative;
+    overflow: auto !important;
+}
+
+@media (max-width: 768px) {
+    .fullScreenTableView{
+        position: fixed;
+        background-color: white;
+        top: 50px;
+        left: 0px;
+        overflow: auto !important;
+    }
+
+    .mobHide{
+        display: none !important;
+    }
+    .logo{
+        display: none !important;
+    }
+    .mobile_logo{
+        color: white;
+        font-size: 30px;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        padding: 0 16% !important;
+        line-height: 1.5;
+    }
+    .mobile_logo_franchise{
+    color: white;
+    font-size: 22px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    /* padding: 0 18% !important; */
+    padding-left: 16% !important ; 
+    line-height: 2.5;
+    }
+    table#sort-order, table.sort-order, table.display{
+        font-size: 11px;
+    }
+
+
+    
+}
+
+#vdataTable{
+    display:none;
+  }
+
+  @media(max-width:768px){
+          #vdataTable{
+      display: block;
+      line-height: 1;
+      width: 100%;
+     }
+      table.dataTable tbody th, table.dataTable tbody td {
+            padding: 8px 1px;
+        }
+        #vdataTable th{
+            width: 40%;
+            border-right: 1px solid #dad3d3;
+            text-align: left;
+            padding-left: 5px;
+        }
+        #vdataTable tr{
+          border: 1px solid #dad3d3;
+        }
+      .cancel_text {
+              font-size: 14px;
+              padding: 37px 28px;
+          }
+
+          .addressToggle{
+            white-space: unset; 
+            width: auto;  
+            overflow: visible;
+            text-overflow:unset;
+            line-height: 12px;
+            margin-top: 3px;
+         }
+  }

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+      
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container">
+                <div style="background-color: white;padding: 20px;">
+                <div class="row">
+                    <h3>Checkout Student Attendance <span><i style="color: rgb(238, 62, 62); font-size: small;" class="glyphicon glyphicon-remove pull-right"></i>
+                      <i style="color: rgb(104, 235, 104); font-size: small;" class="glyphicon glyphicon-refresh pull-right"></i>
+                      <i style="color: yellow; font-size: small;" class="glyphicon glyphicon-menu-down pull-right"></i> </span></h3>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="Class">Select Class </label>
+                        <select style="width: 100%;height: 33px;"  id="Class" name="Class">
+                            <option value="one">One</option>
+                            <option value="two">Two</option>
+                            <option value="three">Three</option>
+                            <option value="four">Four</option>
+                            <option value="five">Five</option>
+                            <option value="six">Six</option>
+                            <option value="seven">Seven</option>
+                            <option value="eight">Eight</option>
+                            <option value="nine">Nine</option>
+                            <option value="ten">Ten</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button style="background-color: rgb(238, 238, 62);" type="button" class="btn btn-lg">Search</button>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="Section">Select Section </label>
+                            <select style="width: 100%;height: 33px;" id="Section" name="Section">
+                                <option value="a">A</option>
+                                <option value="b">B</option>
+                            </select>
+                        </div>
+            
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="month">Select Month </label>
+                            <select style="width: 100%;height: 33px;" id="month" name="month">
+                                <option value="jan">January</option>
+                                <option value="feb">February</option>
+                                <option value="mar">March</option>
+                                <option value="apr">April</option>
+                                <option value="may">May</option>
+                                <option value="jun">June</option>
+                                <option value="jul">July</option>
+                                <option value="aug">Aug</option>
+                                <option value="sep">September</option>
+                                <option value="oct">October</option>
+                                <option value="nov">November</option>
+                                <option value="dec">December</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="year">Session Year</label>
+                    <input style="border: 1px black solid;" type="text" class="form-control" id="year">
+                </div>
+                </div>
+                </div>
+                        <br>
+                <div style="background-color: white;padding:20px">
+                <div class="row">
+                    <h3>Attendance Sheet of Class One:Section A,January 2021 <span><i style="color: rgb(238, 62, 62); font-size: small;" class="glyphicon glyphicon-remove pull-right"></i>
+                      <i style="color: rgb(104, 235, 104); font-size: small;" class="glyphicon glyphicon-refresh pull-right"></i>
+                      <i style="color: yellow; font-size: small;" class="glyphicon glyphicon-menu-down pull-right"></i> </span></h3>
+                </div><br><br>
+                <div class="row">
+                    <table class="table table-bordered table-striped
+                    ">
+                        <thead>
+                          <tr>
+                            <th>Students  Dates</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>10</th>
+                            <th>11</th>
+                            <th>12</th>
+                            <th>13</th>
+                            <th>14</th>
+                            <th>15</th>
+                            <th>16</th>
+                            <th>17</th>
+                            <th>18</th>
+                            <th>19</th>
+                            <th>20</th>
+                            <th>21</th>
+                            <th>22</th>
+                            <th>23</th>
+                            <th>24</th>
+                            <th>25</th>
+                            <th>26</th>
+                            <th>27</th>
+                            <th>28</th>
+                            <th>29</th>
+                            <th>30</th>
+                            <th>31</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Fahimur Rahman</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Richi Akon</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Fahimur Rahman</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+              
+                <script>
+                    $(document).ready(function(){
+            $("#studentform").submit(function(e){
+            e.preventDefault()
+            let obj={}
+            let fd=new FormData(e.currentTarget)
+            fd.forEach((val,key)=>{
+            obj[key]=val
+            })
+            console.log(obj)
+            })
+                    });
+                </script>
+            
+         </section>
+         </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+  </body>
+
+</html>

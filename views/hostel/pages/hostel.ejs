@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+      
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+        /* body {
+            background-color: rgb(224, 223, 223);
+            font-size: 12px;
+        } */
+        
+        i {
+            padding: 0.1cm;
+        }
+        
+        h1 {
+            font-size: 18px;
+            padding-bottom: 10px;
+            /* border-bottom: 1px solid rgb(177, 175, 175); */
+        }
+        
+        .form {
+            /* width: 25%; */
+            padding: 0.7rem 1rem 1rem;
+        }
+        
+        .form-group {
+            padding: 1px;
+        }
+        
+        .btn {
+            padding: 0.4rem 0.8rem 0.4rem;
+            font-size: 12px;
+            color: snow;
+            margin-top: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        .btn-primary {
+            background-color: rgb(0, 0, 124);
+        }
+        
+        .form-control {
+            background: #d8d8d8;
+        }
+        
+        .search-bar .search-text {
+            border-radius: 30px;
+            border: 0px solid;
+            margin: 3px;
+            padding: 5px;
+            background-color: #e9ecef;
+            font-size: 10px;
+        }
+        
+        .search-bar #search-btn {
+            border-radius: 20px;
+            font-size: 10px;
+        }
+        
+        .btn-primary {
+            background-color: rgb(70, 129, 238);
+        }
+        
+        input:focus {
+            outline: none !important;
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container" id="Home">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-3 mb-3" id="Home">
+                        <lable>Home - </lable><a>
+                            <lablel style="color:cornflowerblue;">Hostel</lablel>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <!-- <div style="display: block;">
+                    <a href="#">Home</a>-
+                    <a href="#">Home</a>
+                </div> -->
+                <div class="row ">
+        
+                    <!-- form -->
+        
+                    <form class="col-md-4 p-2 form " id="myForm">
+                        <div class="bg-white p-2">
+                            <div class="form-head border-bottom">
+                                <i class="fa fa-times ml-1 float-right text-danger"></i>
+                                <i class="fa fa-refresh ml-1 float-right text-success reset-btn"></i>
+                                 <i class="fa fa-angle-down ml-1 float-right text-warning"></i>
+                                <h1> Add New Room </h1>
+                            </div>
+                            <div class="form-group input-group-sm ">
+                                <label for="name">Hostel Name</label>
+                                <input type="text" class="form-control  " name="name" id="name" required>
+                            </div>
+                            <div class="form-group input-group-sm">
+                                <label for="number">Room Number</label>
+                                <input type="text" class="form-control " id="number" name="number" required>
+                            </div>
+                            <div class="form-group input-group-sm">
+                                <label for="type">Room Type</label>
+                                <select class="form-control" id="type" name="type" required>
+                                        <option value="" selected>Select</option>
+                                        <option value="1111">1212</option>
+                                    </select>
+                            </div>
+                            <div class="form-group input-group-sm">
+                                <label for="bed">Number Of Bed</label>
+                                <select class="form-control " id="bed" name="bed" required>
+                                        <option value="" selected>Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+
+                                    </select>
+                            </div>
+                            <div class="form-group input-group-sm">
+                                <label for="cost">Cost Per Bed</label>
+                                <input type="text" class="form-control " id="cost" placeholder="$00.00" name="cost" required>
+                            </div>
+        
+                            <button type="button" class="btn btn-warning" id="submit">Submit</button>
+                            <button type="button" class="btn btn-primary reset-btn">Reset</button>
+                        </div>
+        
+                    </form>
+                    <!-- form end -->
+                    <div class="col-sm-8 p-2 ">
+                        <div class="bg-white p-2 table-responsive ">
+                            <!-- table head -->
+                            <h1>Hostel Room List</h1>
+                            <!-- table head end -->
+                            <!-- table start -->
+                            <table class="table table-striped " id="mytable">
+                                <%if(hostelList && hostelList.length>0){%>
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="rute-name" name="rutename" value="rute" class="m-2">Hostel Name <i class="fa fa-sort m-1"></i></th>
+                                        <th>Room Number</th>
+                                        <th>Room Type</th>
+                                        <th>No Of Bed</th>
+                                        <th>Cost Per Bed</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="record">
+                                    <%for(var i=0;i < hostelList.length;i++){%>
+                                    <tr>
+                                        <td class="hname">
+                                            <input type="checkbox" id="rute-name" name="rutename" value="rute" class="m-2">
+                                            <%= hostelList[i].hname%></td>
+                                        <td class="rnumber"><%= hostelList[i].rnumber%></td>
+                                        <td class="rtype"><%= hostelList[i].rtype%></td>
+                                        <td class="bednumber"><%= hostelList[i].bednumber%></td>
+                                        <td class="bedcost"><%= hostelList[i].bedcost%></td>
+                                        <td class="trans-i"><button type="button"
+                                            value="<%=hostelList[i]._id%>" class="btn_eye fa fa-eye 
+                                        text-success">
+                                        </button>
+
+                                        <button type="button" value="<%=hostelList[i]._id%>"
+                                            class="btn_edit fa fa-pencil-square-o 
+                                            text-success">
+                                        </button>
+                                        <button type="button" value="<%=hostelList[i]._id%>"
+                                            class="btn_delete fa fa-trash-o
+                                            text-danger">
+                                        </button>
+                                        </td>
+                                    </tr>
+                                    <%}%>
+                                </tbody>
+                                <%}else{%>
+                                    <div>
+                                        <h1 class="text-center">No record found !!!</h1>
+                                    </div>
+                                    <%}%>
+                            </table>
+                            <!-- table end -->
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+            
+         </section>
+         </div>
+         <script src="../../../js/hostel.js"></script>
+    <% include ../../partials/scriptsAdmin.ejs %>
+  </body>
+
+</html>

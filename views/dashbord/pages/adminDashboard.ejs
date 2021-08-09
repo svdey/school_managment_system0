@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawVisualization);
+
+        function drawVisualization() {
+            // Some raw data (not necessarily accurate)
+            var data = google.visualization.arrayToDataTable([
+                ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+                ['2004/05', 165, 938, 522, 998, 450, 614.6],
+                ['2005/06', 135, 1120, 599, 1268, 288, 682],
+                ['2006/07', 157, 1167, 587, 807, 397, 623],
+                ['2007/08', 139, 1110, 615, 968, 215, 609.4],
+                ['2008/09', 136, 691, 629, 1026, 366, 569.6]
+            ]);
+
+            var options = {
+                title: 'Monthly Coffee Production by Country',
+                vAxis: {
+                    title: 'Cups'
+                },
+                hAxis: {
+                    title: 'Month'
+                },
+                seriesType: 'bars',
+                series: {
+                    5: {
+                        type: 'line'
+                    }
+                }
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+
+        .fa {
+            cursor: pointer;
+        }
+
+        .table_wrap {
+            min-height: 350px;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+
+        .fa {
+            cursor: pointer;
+        }
+
+        .table_wrap {
+            min-height: 350px;
+        }
+
+        .container {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .card {
+            border-radius: 0px;
+            height: 76px;
+        }
+
+        .card-body {
+            margin-top: -10px;
+            margin-right: 2px;
+        }
+
+        .vl {
+            height: 47px;
+            border-right: 1px solid rgb(146, 141, 141);
+            position: absolute;
+            right: 50%;
+            margin-top: 15px;
+        }
+
+        .left {
+            margin-right: 10px;
+        }
+
+        .vertical {
+            /* border-right: 1px solid rgb(146, 141, 141); */
+            /* position: absolute; */
+            /* right: 50%; */
+            width: 110px;
+            height: 1px;
+        }
+
+        body {
+            background: #f1f1f1;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        .calendar {
+            width: 516px;
+            font-size: 150%;
+            margin: 50px auto 0;
+            perspective: 1000px;
+            cursor: default;
+            position: relative;
+            margin-top: -82px;
+            margin-right: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .calendar {
+                width: 355px;
+                margin-left: -30px;
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+
+            #chart_div {
+                width: 355px;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .graph {
+                width: 355px;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+        <!-- Left side column. contains the logo and sidebar -->
+        <% include ../../partials/navbar.ejs %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
+                            <p>Home - <strong>Admin</strong> </p>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-3 mt-4">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <i class="fas fa-users fa-2x left p-3 pr-3" style="color: lightgreen;"></i>
+                                        <p class="ml-3 pb-3">Students</p>
+                                    </div>
+                                    <div class="vl"></div>
+                                    <div class="card-body">
+                                        <h4 class="p-4">50,000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-3 mt-4">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <i class="fas fa-user-friends fa-2x left text-primary p-3 pr-3"></i>
+                                        <p class="ml-3 pb-3">Teachers</p>
+                                    </div>
+                                    <div class="vl"></div>
+                                    <div class="card-body">
+                                        <h4 class="p-4">10,000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-3 mt-4">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <i class="fas fa-user-plus fa-2x text-warning p-3"></i>
+                                        <p class="pl-3">Teachers</p>
+                                    </div>
+                                    <div class="vl"></div>
+                                    <div class="card-body">
+                                        <h4 class="p-4 pb-3">10,000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-3 mt-4">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <i class="fas fa-money-bill-alt fa-2x text-info p-3"></i>
+                                        <p class="pl-3">Teachers</p>
+                                    </div>
+                                    <div class="vl"></div>
+                                    <div class="card-body">
+                                        <h4 class="p-4">$ 10,000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-6 mt-4">
+                            <div class="card graph" style="height: 233px; width: 500px; margin-left: 18px;">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <div id="chart_div" style="width: 500px; height: 200px; padding-bottom: 0px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-3 mt-4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card"
+                                        style="height: 105px; background: linear-gradient(120deg, #3b5998, #fff);">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col pt-4">
+                                                    <i class="fab fa-facebook-f text-light"></i><br>
+                                                    <small>Like us on Facebook</small>
+                                                </div>
+                                                <div class="vl"></div>
+                                                <div class="col pt-2">
+                                                    <h4>30,000</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 pt-4">
+                                    <div class="card"
+                                        style="height: 105px; background: linear-gradient(45deg, #0077b5, #ccaeae, #313335, #86888a, #caccce, #00a0dc);">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col pt-4">
+                                                    <i class="fab fa-linkedin text-light"></i><br>
+                                                    <small>Follow us on LinkedIn</small>
+                                                </div>
+                                                <div class="vl"></div>
+                                                <div class="col pt-2">
+                                                    <h4>30,000</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-3 mt-4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card"
+                                        style="height: 105px; background: linear-gradient(45deg, #66757f, #00ACEE, #36D8FF, #f5f8fa, #ffffff);">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col pt-4">
+                                                    <i class="fab fa-twitter text-light"></i><br>
+                                                    <small>Follow us on Twitter</small>
+                                                </div>
+                                                <div class="vl"></div>
+                                                <div class="col pt-2">
+                                                    <h4>30,000</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 pt-4">
+                                    <div class="card"
+                                        style="height: 105px; background: linear-gradient(120deg, #dd4b39, #FFFFFF);">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col pt-4">
+                                                    <i class="fab fa-google-plus text-light"></i><br>
+                                                    <small>Follow us on Google Plus</small>
+                                                </div>
+                                                <div class="vl"></div>
+                                                <div class="col pt-2">
+                                                    <h4>30,000</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-xs-12 col-md-6 mt-4">
+                            <div class="card-body">
+                                <br><br><br>
+                                <div class="calendar" style="padding-left: 0px; padding-bottom: 10px;">
+                                    <div class="header">
+                                        <a data-action="prev-month" href="javascript:void(0)"
+                                            title="Previous Month"><i></i></a>
+                                        <div class="text" data-render="month-year"></div>
+                                        <a data-action="next-month" href="javascript:void(0)"
+                                            title="Next Month"><i></i></a>
+                                    </div>
+                                    <div class="months" data-flow="left">
+                                        <div class="month month-a">
+                                            <div class="render render-a"></div>
+                                        </div>
+                                        <div class="month month-b">
+                                            <div class="render render-b"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 col-md-3 mt-4">
+                            <div class="card" style="height: 380px;">
+                                <div class="card-body">
+                                    <h6>Notice Board</h6>
+                                    <div style="margin-top: -26px;">
+                                        <i class="fas fa-times pull-right" style="color: red;"></i>
+                                        <i class="fas fa-sync pull-right"
+                                            style="color: green; margin-left: 8px; margin-right: 8px;"></i>
+                                        <i class="fa fa-angle-down pull-right"
+                                            style="color: orange; margin-left: 7px;"></i>
+                                    </div>
+                                    <hr style="width: 100%; margin-top: 28px;">
+                                    <p>07 April, 2021 <small>5 min ago</small></p>
+                                    <p class="text-primary">Jannyfer Lopez</p>
+                                    <p><small>Lorem ipsum dolor sit, amet consectetur
+                                            adipisicing elit.
+                                            Dolore, at!</small></p>
+                                    <p><small>16 may, 2017</small></p>
+                                    <p class="text-warning">Killer Miller <small>16 min
+                                            ago</small></p>
+                                    <p><small>Lorem ipsum, dolor sit amet consectetur
+                                            adipisicing elit.
+                                            Aspernatur, illo!</small></p>
+                                    <p>16 may, 2017</p>Jannyfer Lopez</p>
+                                    <p><small>Lorem ipsum dolor sit, amet consectetur
+                                            adipisicing.</small></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 col-md-3 mt-4">
+                            <div class="card" style="height: 380px;">
+                                <div class="card-body">
+                                    <h6>Recent Activities</h6>
+                                    <div style="margin-top: -26px;">
+                                        <i class="fas fa-times pull-right" style="color: red;"></i>
+                                        <i class="fas fa-sync pull-right"
+                                            style="color: green; margin-left: 8px; margin-right: 8px;"></i>
+                                        <i class="fa fa-angle-down pull-right"
+                                            style="color: orange; margin-left: 7px;"></i>
+                                    </div>
+                                    <hr style="width: 100%; margin-top: 28px;">
+                                    <ul type="circle">
+                                        <li style="color: red;">
+                                            <p style="margin-top: -9px; color: black;"><small>9 minutes ago</small></p>
+                                            <p style="margin-top: -15px; color: black;"><small>Lorem ipsum dolor sit
+                                                    amet
+                                                    consectetur.</small></p>
+                                        </li>
+                                        <li style="color: #00a0dc">
+                                            <p style="color: black;"><small>9 minutes ago</small></p>
+                                            <p style="margin-top: -10px; color: black;"><small>Lorem ipsum dolor sit
+                                                    amet
+                                                    consectetur.</small></p>
+                                        </li>
+                                        <li style="color: skyblue;">
+                                            <p style="color: black;"><small>9 minutes ago</small></p>
+                                            <p style="margin-top: -10px; color: black;"><small>Lorem ipsum dolor sit
+                                                    amet
+                                                    consectetur.</small></p>
+                                        </li>
+                                        <li style="color: green;">
+                                            <p style="color: black;"><small>9 minutes ago</small></p>
+                                            <p style="margin-top: -10px; color: black;"><small>Lorem ipsum dolor sit
+                                                    amet
+                                                    consectetur.</small></p>
+                                        </li>
+                                        <li style="color: yellow;">
+                                            <p style="color: black;"><small>9 minutes ago</small></p>
+                                            <p style="margin-top: -10px; color: black;"><small>Lorem ipsum dolor sit
+                                                    amet
+                                                    consectetur.</small></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+
+</html>

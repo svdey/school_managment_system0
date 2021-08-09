@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+      
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+        .container {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .card {
+            border-radius: 0px;
+            height: 76px;
+        }
+
+        .card-body {
+            margin-top: -10px;
+            margin-right: 2px;
+        }
+
+        body {
+            background: #f1f1f1;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container p-3">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+                        <h6>Home - <strong>Create Payment</strong></h6>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+                        <div class="card" style="min-height: 380px;">
+                            <div class="card-body">
+                                <span style="float: left;">Payment Information</span>
+                                <i class="fas fa-times" style="float: right; color: red;"></i>
+                                <i class="fas fa-sync" style=" float: right; color: green; margin-left: 8px;
+                                                                    margin-right: 8px;"></i>
+                                <i class="fa fa-angle-down" style="float: right; color: orange; margin-left: 7px;"></i>
+                                <hr style="width: 100%; margin-top: 38px;">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label for="name"><small>Name</small></label>
+                                            <input type="text" class="form-control"
+                                                style="background: #f1f1f1; border-radius: 0px;"
+                                                placeholder="Enter subject class" id="name">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label for="id"><small>ID</small></label>
+                                            <input type="text" class="form-control input-group-sm" id="myid"
+                                                placeholder="Enter email" style="background: #f1f1f1; border-radius: 0px;"
+                                                name="id">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label for="class"><small>Class</small></label>
+                                            <input type="text" class="form-control input-group-sm" id="class"
+                                                placeholder="Enter email" style="background: #f1f1f1; border-radius: 0px;"
+                                                name="class">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label for="section"><small>Section</small></label>
+                                            <input type="text" class="form-control input-group-sm"
+                                                placeholder="Enter password"
+                                                style="background: #f1f1f1; border-radius: 0px;" id="section"
+                                                name="section">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6 p-3 ">
+                                            <label for="totalfee"><small>Total Fee</small></label>
+                                            <input type="text" class="form-control"
+                                                style="background: #f1f1f1; border-radius: 0px;"
+                                                placeholder="Enter subject class" id="totalfee">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6 p-3">
+                                            <label for="paymentMethod"><small>Payment Method</small></label>
+                                            <input type="text" class="form-control input-group-sm" id="paymentMethod"
+                                                placeholder="Enter email" style="background: #f1f1f1; border-radius: 0px;"
+                                                name="paymentMethod">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6 p-3">
+                                            <label for="status"><small>Status</small></label>
+                                            <input type="text" class="form-control input-group-sm" id="status"
+                                                placeholder="Enter email" style="background: #f1f1f1; border-radius: 0px;"
+                                                name="class">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6 p-3">
+                                            <label for="date"><small>Date</small></label>
+                                            <input type="date" class="form-control input-group-sm"
+                                                placeholder="Enter password"
+                                                style="background: #f1f1f1; border-radius: 0px;" id="date"
+                                                name="section">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-sm btn-warning btn_submit"
+                                            style="border-radius: 0px; margin-top: 17px ;"><small>Submit</small></button>
+                                        <button type="button" class="btn btn-sm btn-primary"
+                                            style="border-radius: 0px; margin-top: 17px;"><small>Reset</small></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </section>
+         </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+  </body>
+ 
+  <script src="../../../js/studentPayment.js"></script>
+</html>

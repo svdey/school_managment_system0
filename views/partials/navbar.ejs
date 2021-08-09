@@ -1,0 +1,266 @@
+<aside class="main-sidebar">
+	<style>
+		.sidebar-menu,
+		.sidebar-menu:hover {
+			overflow: visible;
+			overflow-y: scroll;
+			max-height: 100vh !important;
+		}
+
+		.sidebar-collapse .sidebar-menu {
+			overflow-y: visible !important;
+		}
+
+		::-webkit-scrollbar {
+			width: 12px;
+		}
+
+		::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+			border-radius: 10px;
+		}
+
+		::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+		}
+	</style>
+	<section class="sidebar">
+		<div class="user-panel">
+			<div class="pull-left image">
+				<img src="../../../dist/img/avatar5.png" class="img-circle" alt="User Image">
+			</div>
+			<div class="pull-left info">
+				<p class="activeUserName">User</p>
+				<p class="userEmail">Email</p>
+			</div>
+		</div>
+
+		<ul class="sidebar-menu" data-widget="tree">
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-tachometer"></i>
+					<span>Dashboard</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/adminDashboard"><i></i>Admin</a></li>
+					<li><a href="/studentDashboard"><i></i>Student</a></li>
+					<li><a href="/parentsDashbord"><i></i>Parents</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-graduation-cap"></i>
+					<span>Students</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/AllStudent"><i></i>All Students</a></li>
+					<li><a href="/studentDetail"><i></i>Student Details</a></li>
+					<li><a href="/addmissionForm"><i></i>Addmission Form</a></li>
+					<li><a href="/studentPromotion"><i></i>Student Promotion</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-user"></i>
+					<span>Teacher</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/allTeachers"><i></i>All Teacher</a></li>
+					<li><a href="/teachersDetail"><i></i>Teacher Details</a></li>
+					<li><a href="/addTeachers"><i></i>Add Teacher</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-user"></i>
+					<span>Parents</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/parentList"><i></i>Parents List</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-book"></i>
+					<span>Library</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/allBook"><i></i>All Books</a></li>
+					<li><a href="/addBook"><i></i>Add Book</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-user-circle-o"></i>
+					<span>Account</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/feesCollection"><i></i>Fees Collection</a></li>
+					<li><a href="/studentPayment"><i></i>Creat Student Payment</a></li>
+					<li><a href="/allExpenses"><i></i>All Expenses</a></li>
+					<li><a href="/addExpenses"><i></i>Add Expenses</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-university"></i>
+					<span>Class</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/allClass"><i></i>All Class</a></li>
+					<li><a href="/addClass"><i></i>Add New Classes</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-book"></i>
+					<span>Subject</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/subject"><i></i>Subject</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-television"></i>
+					<span>Class Routine</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/classRoutine"><i></i>Class Routine</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-check-square"></i>
+					<span>Attendence</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/attencence"><i></i>Attendence</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-pencil-square-o"></i>
+					<span>Exam</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/examSchedule"><i></i>Exam Schedule</a></li>
+					<li><a href="/examGrades"><i></i>Exam Grades</a></li>
+					<li><a href="/addQuestion"><i></i>Add Question</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-bus"></i>
+					<span>Transport</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/transport"><i></i>Transport</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-bed"></i>
+					<span>Hostel</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/hostel"><i></i>Hostel</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="/Notice">
+					<i class="fa fa-sticky-note"></i>
+					<span>Notice</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/notice"><i></i>Notice</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="Message">
+					<i class="fa fa-envelope"></i>
+					<span>Message</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/message"><i></i>Message</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="/Map">
+					<i class="fa fa-tasks"></i>
+					<span>UI Elements</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+			</li>
+			<li class="treeview">
+				<a href="/Map">
+					<i class="fa fa-map"></i>
+					<span>Map</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-cogs"></i>
+					<span>Account</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="/accountSetting"><i></i>Account Settings</a></li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+</aside>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Message</title>
+    <% include ../../partials/css.ejs %>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                text-transform: capitalize;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background-color: #e9ecef;
+
+            }
+
+
+            .message-section {
+                height: max-content;
+            }
+
+            .message-heading h5 {
+                display: inline-block;
+                font-size: 18px;
+            }
+
+            .message-heading h5,
+            .icon {
+
+                padding-top: 0.5em;
+
+            }
+
+            .message-heading .icon {
+                cursor: pointer;
+
+            }
+
+            #submitform .input-text {
+                background-color: #e9ecef;
+            }
+
+            .right-section {
+                padding: 0.4em;
+                height: 230px;
+            }
+
+
+            .icon-text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+
+            .icon-text .fa {
+                font-size: 3em;
+            }
+
+            .icon-text span {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                opacity: 60%;
+                font-style: italic;
+            }
+        </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+            <!-- Left side column. contains the logo and sidebar -->
+            <% include ../../partials/navbar.ejs %>
+
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <div class="container-fluid mt-5">
+                            <div class="row">
+                                <div class="col-xl-7 col-lg-12 bg-white m-2 message-section">
+                                    <div class="message-heading">
+                                        <h5>write new message</h5>
+                                        <span class="icon float-right">
+                                            <i class="fa fa-angle-down text-warning ml-1"></i>
+                                            <i class="fa fa-refresh btn_refresh ml-1 text-success"></i>
+                                            <i class="fa fa-times ml-1 text-danger"></i>
+                                        </span>
+                                        <hr>
+                                    </div>
+                                    <form id="submitform" class="pb-4">
+                                        <div class="form-group">
+                                            <label for="title">title</label>
+                                            <input type="text" name="title" class="form-control input-text "
+                                                required="true">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient">recipient</label>
+                                            <select name="recipient" class="form-control input-text" id="recipient">
+                                                <option value="" selected>Select
+                                                </option>
+                                                <option value="asansol">asansol
+                                                </option>
+                                                <option value="burnpur">burnpur
+                                                </option>
+                                                <option value="raniganj">raniganj
+                                                </option>
+                                                <option value="durgapur">durgapur
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message">message</label>
+                                            <textarea id="message" name="message" class="input-text form-control"
+                                                rows="5">
+                                             </textarea>
+                                        </div>
+                                        <div class="mt-1">
+                                            <button class="btn btn-warning" type="submit" id="submit-btn">Send
+                                                Message</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xl-4 m-1">
+                                    <div class="success-message bg-white right-section">
+                                        <div class="message-heading">
+                                            <h5>successful message</h5>
+                                            <span class="icon float-right">
+                                                <i class="fa fa-angle-down text-warning ml-1"></i>
+                                                <i class="fa fa-refresh btn_refresh ml-1 text-success"></i>
+                                                <i class="fa fa-times ml-1 text-danger"></i>
+                                            </span>
+                                            <hr>
+                                        </div>
+                                        <div class="icon-text">
+                                            <i class="fa fa-check-circle text-success mr-2"></i>
+                                            <span>successfully upload your product</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="error-message  bg-white right-section mt-3">
+                                        <div class="message-heading">
+                                            <h5>error message</h5>
+                                            <span class="icon float-right">
+                                                <i class="fa fa-angle-down text-warning ml-1"></i>
+                                                <i class="fa fa-refresh ml-1 text-success"></i>
+                                                <i class="fa fa-times ml-1 text-danger"></i>
+                                            </span>
+                                            <hr>
+                                        </div>
+                                        <div class="icon-text">
+                                            <i class="fa fa-exclamation-circle text-danger mr-2"></i>
+                                            <span>some fields required here</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+    </div>
+    <script src="../../../js/message.js"></script>
+    <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+
+</html>

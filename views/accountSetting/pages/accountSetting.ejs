@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+        <style>
+            .form_bg {
+                background: #f1f1f1;
+            }
+        </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+            <!-- Left side column. contains the logo and sidebar -->
+            <% include ../../partials/navbar.ejs %>
+
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <div class="container" style="background:#f1f1f1"><br><br>
+                            <p>Home - <span><a>Account setting</a></span></p>
+                            <div class="row">
+                                <div class="col-md-4" style="background:#f1f1f1;margin-left:10px;margin-bottom:30px">
+                                    <div class="row">
+                                        <div class="col-md-12" style="background:white;margin-bottom:2px;">
+                                            <label>
+                                                <h4 style="font-weight:bold">Account Setting</h4>
+                                            </label>
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn btn_cur glyphicon glyphicon-ok"
+                                                    style="color:green;background:white"></button>
+                                                <button type="button"
+                                                    class="btn btn_refresh glyphicon glyphicon-refresh"
+                                                    style="color:green;background:white"></button>
+                                                <button type="button" class="btn btn_save glyphicon glyphicon-remove"
+                                                    style="color:red;background:white"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12" style="background:white">
+                                            <form enctype="multipart/form-data">
+                                                <div class="form-group"><br>
+                                                    <label for="name"> Name</label>
+                                                    <input type="text" class="form-control form_bg" id="name"
+                                                        name="name" value="<%= accountSettingList.name %>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="gender">Gender</label>
+                                                    <select class="form-control form_bg" id="gender" value="male">
+                                                        <option value="" selected disabled hidden>
+                                                            <%= accountSettingList.gender %>
+                                                        </option>
+                                                        <option>Male
+                                                        </option>
+                                                        <option>Female
+                                                        </option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="addresss">Address</label>
+                                                    <input type="text" class="form-control form_bg" id="address"
+                                                        name="address" value="<%= accountSettingList.address %>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="phone">Phone</label>
+                                                    <input type="text" class="form-control form_bg" id="phone"
+                                                        name="phone" value="<%= accountSettingList.phone %>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">E-mail</label>
+                                                    <input type="text" class="form-control form_bg" id="email"
+                                                        name="email" value="<%= accountSettingList.email %>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="scode">School Code</label>
+                                                    <input type="text" class="form-control form_bg" id="scode"
+                                                        name="scode" value="<%= accountSettingList.scode %>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="session">Session</label>
+                                                    <input type="text" class="form-control form_bg" id="session"
+                                                        name="session" value="<%= accountSettingList.session %>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="lang">Language</label>
+                                                    <select class="form-control form_bg" id="lang"
+                                                        value="<%= accountSettingList.lang %>">
+                                                        <option value="" selected disabled hidden>
+                                                            <%= accountSettingList.lang %>
+                                                        </option>
+                                                        <option>Hindi
+                                                        </option>
+                                                        <option>English
+                                                        </option>
+                                                        <option>Bengali
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="jdate" style="color:black">Joining Date</label>
+                                                    <input type="date" class="form-control form_bg" id="jdate"
+                                                        name="jdate" value="<%= accountSettingList.jdate %>">
+                                                </div><br>
+                                                <form action="/image-upload" method="POST"
+                                                    enctype="multipart/form-data">
+                                                    <div>
+                                                        <h4>Upload Student Photo(150px X 150px)</h4>
+                                                        <input type="file" style="margin-left:90px;" accept=".jpg"
+                                                            name="image-upload" value="image-upload">
+                                                    </div>
+                                                </form><br>
+                                                <button type="submit" class="btn btn-lg btn_update"
+                                                    style="color:white;background:#f6bd0bd6;margin-left:70px"
+                                                    value="<%= accountSettingList._id %>">Update</button>
+
+                                                <button type="button" class="btn btn-lg"
+                                                    style=" color:white;margin-left:10px;background:#04043a">Reset</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7" style="background:#f1f1f1;margin-left:30px;">
+                                    <div class="row">
+                                        <div class="col-md-12" style="background:white;margin-bottom:2px;">
+                                            <label>
+                                                <h4 style="font-weight:bold">User Profile</h4>
+                                            </label>
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn btn_cut glyphicon glyphicon-ok"
+                                                    style="color:green;background:white"></button>
+                                                <button type="button"
+                                                    class="btn btn_refresh glyphicon glyphicon-refresh"
+                                                    style="color:green;background:white"></button>
+                                                <button type="button" class="btn btn_save glyphicon glyphicon-remove"
+                                                    style="color:red;background:white"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="background:white">
+                                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                                <img src="user_img.jpg" class="responsive" width="100%" height="100%"
+                                                    style="margin-top:20px;">
+                                            </div>
+                                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                                <table class="table table-borderless">
+                                                    <% if(accountSettingList){ %>
+                                                        <tr>
+                                                            <th>Name:</th>
+                                                            <td>
+                                                                <%= accountSettingList.name %>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Gender:</th>
+                                                            <td>
+                                                                <%= accountSettingList.gender%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Address:</th>
+                                                            <td>
+                                                                <%= accountSettingList.address%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Phone:</th>
+                                                            <td>
+                                                                <%= accountSettingList.phone%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>E-mail:</th>
+                                                            <td>
+                                                                <%= accountSettingList.email%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>School Code:</th>
+                                                            <td>
+                                                                <%= accountSettingList.scode%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Session:</th>
+                                                            <td>
+                                                                <%= accountSettingList.session%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Language:</th>
+                                                            <td>
+                                                                <%= accountSettingList.lang%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Joining Date:</th>
+                                                            <td>
+                                                                <%= accountSettingList.jdate%>
+                                                            </td>
+                                                        </tr>
+                                                        <%} else {%>
+                                                            <div>
+                                                                <h4>Record not found</h4>
+                                                            </div>
+                                                            <%}%>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <script>
+
+                            $(document).ready(function () {
+                                $(document).on("click", ".btn_update", function () {
+                                    var id = $(this).val();
+                                    var name = $("#name").val();
+                                    var gender = $("#gender").val();
+                                    var address = $("#address").val();
+                                    var phone = $("#phone").val();
+                                    var email = $("#email").val();
+                                    var scode = $("#scode").val();
+                                    var session = $("#session").val();
+                                    var lang = $("#lang").val();
+                                    var jdate = $("#jdate").val();
+                                    var data = {
+                                        id: id,
+                                        name: name,
+                                        gender: gender,
+                                        address: address,
+                                        phone: phone,
+                                        email: email,
+                                        scode: scode,
+                                        lang: lang,
+                                        jdate: jdate,
+                                        session: session,
+                                    }
+                                    console.log('session-->', session);
+                                    $.ajax({
+                                        url: "/accountSetting-update",
+                                        type: "POST",
+                                        data: data,
+                                        success: function (res) {
+                                            if (res.success) {
+                                                alert(res.success);
+                                                window.location.reload();
+                                            } else if (res.error) {
+                                                alert(res.error);
+                                                window.location.reload();
+                                            }
+                                        },
+                                    });
+
+                                })
+                            })
+
+
+                        </script>
+
+                    </section>
+                </div>
+    </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+
+</html>

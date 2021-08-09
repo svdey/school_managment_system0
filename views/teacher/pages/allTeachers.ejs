@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../../js/addTeachers.js"></script>
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+      
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+        .container {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+            border-radius: 20px;
+        }
+
+        #Home {
+            background-color: #f1f1f1;
+
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container" id="Home">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-3 mb-3" id="Home">
+                        <lable>Home - </lable><a>
+                            <lablel style="color:cornflowerblue;">All Teachers List</lablel>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-12 table-responsive">
+                    <table class="table table-striped table-sm table-hover" id="tblTeacher">
+                        <thead>
+                            <th style="padding-bottom: 4px;">
+                                <small><strong>ID</strong></small>
+                            </th>
+                            <th><small><strong>Photo</strong></small></th>
+                            <th><small><strong>Name</strong></small></th>
+                            <th><small><strong>Gender</strong></small></th>
+                            <th><small><strong>Subject</strong></small></th>
+                            <th><small><strong>Class</strong></small></th>
+                            <th><small><strong>Section</strong></small></th>
+                            <th><small><strong>Address</strong></small></th>
+                            <th><small><strong>Date of Birth</strong></small></th>
+                            <th><small><strong>Mobile No</strong></small></th>
+                            <th><small><strong>Email</strong></small></th>
+                            <th><small><strong>Action</strong></small> </th>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0;i< teacherList.length;i++) {%>
+                            <tr>
+                                <td class="idno">
+                                   <%=teacherList[i].idno%>
+                                </td>
+                                <td class="Photo">
+                                    <%=teacherList[i].Photo%>
+                                </td>
+                                <td class="firstName">
+                                    <%=teacherList[i].firstName%>
+                                    <%=teacherList[i].lastName%>
+                                </td>
+                                
+                                <td class="gender">
+                                    <%=teacherList[i].gender%>
+                                </td>
+                                <td class="subject">
+                                    <%=teacherList[i].subject%>
+                                </td>
+                                <td class="sclass">
+                                    <%=teacherList[i].sclass%>
+                                </td>
+                                <td class="section">
+                                    <%=teacherList[i].section%>
+                                </td>
+                                <td class="address">
+                                    <%=teacherList[i].address%> 
+                                </td>
+                                <td class="dateofbirth">
+                                    <%=teacherList[i].dateofbirth%>  
+                                </td>
+                                <td class="phone">
+                                    <%=teacherList[i].phone%> 
+                                </td>
+                                <td class="email">
+                                    <%=teacherList[i].email%>
+                                    <td><a href="/teachersDetail?id=<%=teacherList[i]._id%>"><button type="button" class="btn_eye fa fa-eye 
+                                        ">
+                                        </button></a>
+                                        <button type="button" value="<%=teacherList[i]._id%>"
+                                            class="btn_edit fa fa-pencil-square-o 
+                                            text-success">
+                                        </button>
+                                        <button type="button" value="<%=teacherList[i]._id%>"
+                                            class="btn_delete fa fa-trash-o
+                                            text-danger">
+                                        </button>
+                                    </td>
+
+                            </tr>
+                            <%}%>
+                            
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+            
+         </section>
+         </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+  </body>
+
+</html>

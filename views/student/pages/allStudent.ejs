@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+        <style>
+            body {
+                background: #f1f1f1;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+
+            .form-control {
+                background-color: #f3f4ed;
+                border-radius: 20px;
+            }
+        </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+            <!-- Left side column. contains the logo and sidebar -->
+            <% include ../../partials/navbar.ejs %>
+
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <a href="/addmissionForm"><button class="btn btn-primary btn_add_student">New Addmission</button></a>
+                            <h2>Homes-<strong>All Students</strong></h2>
+                            
+                            <hr>
+                                    <table class="table table-striped"  id="tblallStudent">
+                                            <thead>
+                                                <tr>
+                                                    <th>Roll</th>
+                                                    <th>Photo</th>
+                                                    <th>Name</th>
+                                                    <th>Gender</th>
+                                                    <th>Parents Name</th>
+                                                    <th>Class</th>
+                                                    <th>Address</th>
+                                                    <th>Section</th>
+                                                    <th>Date Of Birth</th>
+                                                    <th>Mobile No</th>
+                                                    <th>E-mail</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% for(var i=0;i< addmissionlist.length;i++){%>
+                                                <tr>
+                                                        <td class="roll">
+                                                            <%=addmissionlist[i].roll%>
+                                                        </td>
+                                                        <td class="std_photo"> <img style="height: 22px; width: 22px;"
+                                                                src="../../../images/favicon.png">
+                                                            <%=addmissionlist[i].std_photo%>
+                                                        </td>
+                                                        <td class="std_name">
+                                                            <%=addmissionlist[i].std_name%>
+                                                            <%=addmissionlist[i].lastname%>
+                                                        </td>
+                                                        <td class="gender">
+                                                            <%=addmissionlist[i].gender%>
+                                                        </td>
+                                                        <td class="father_name">
+                                                            <%=addmissionlist[i].father_name%>
+                                                        </td>
+                                                        <td class="class">
+                                                            <%=addmissionlist[i].class_study%>
+                                                        </td>
+                                                        <td class="address">
+                                                            <%=addmissionlist[i].address %>
+                                                        </td>
+                                                        <td class="address">
+                                                            <%=addmissionlist[i].section %>
+                                                        </td>
+                                                        <td class="dob">
+                                                            <%=addmissionlist[i].dob %>
+                                                        </td>
+                                                        <td class="mobile">
+                                                            <%=addmissionlist[i].mobile %>
+                                                        </td>
+                                                        <td class="email">
+                                                            <%=addmissionlist[i].email %>
+                                                        </td>                                                 
+                                                        <td>
+                                                            <a href="/studentDetail?id=<%=addmissionlist[i]._id%>"><button type="button" class="btn_eye fa fa-eye 
+                                                                ">
+                                                                </button></a>
+                                                            <button type="button" class="fa fa-edit btn_edit"
+                                                                style="color:lime"
+                                                                value="<%=addmissionlist[i]._id%>"></Button>
+                                                            <button type="button" class="fa fa-trash btn_delete"
+                                                                style="color:red;"
+                                                                value="<%=addmissionlist[i]._id%>"></button>
+                                                        </td>
+                                                </tr>
+                                                <%}%>
+                                            </tbody>
+                                    </table>
+                               
+                            
+                       
+                    </section>
+                </div>
+                <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+<script src="../../../js/addmissionForm.js"></script>
+
+</html>

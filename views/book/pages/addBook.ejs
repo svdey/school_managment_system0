@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+      
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container p-3">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+                        <h6>Home - <strong>Add New Books</strong></h6>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+                        <div class="card" style="min-height: 380px;">
+                            <div class="card-body">
+                                <h5 style="float: left;">Books Information</h5>
+                                <i class="fas fa-times" style="float: right; color: red;"></i>
+                                <i class="fas fa-sync" style=" float: right; color: green; margin-left: 8px;
+                                                                    margin-right: 8px;"></i>
+                                <i class="fa fa-angle-down" style="float: right; color: orange; margin-left: 7px;"></i>
+                                <hr style="width: 100%; margin-top: 38px;">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label for="name"><small>Book Name</small></label>
+                                            <input type="text" class="form-control"
+                                                style="background: #f1f1f1; border-radius: 0px;"
+                                                placeholder="Enter Book Name" id="subjectclass">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label for="id"><small>Subject</small></label>
+                                            <input type="text" class="form-control input-group-sm" id="id"
+                                                placeholder="Enter Subject" style="background: #f1f1f1; border-radius: 0px;"
+                                                name="id">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label for="class"><small>Writer Name</small></label>
+                                            <input type="text" class="form-control input-group-sm" id="class"
+                                                placeholder="Enter Writer Name" style="background: #f1f1f1; border-radius: 0px;"
+                                                name="class">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label for="section"><small>Class</small></label>
+                                            <input type="password" class="form-control input-group-sm"
+                                                placeholder="Enter Class"
+                                                style="background: #f1f1f1; border-radius: 0px;" id="section"
+                                                name="section">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6 p-3 ">
+                                            <label for="totalfee"><small>Publishing year</small></label>
+                                            <input type="text" class="form-control"
+                                                style="background: #f1f1f1; border-radius: 0px;"
+                                                placeholder="Enter Publishing Year" id="totalfee">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6 p-3">
+                                            <label for="date"><small>Upload Date</small></label>
+                                            <input type="date" class="form-control input-group-sm"
+                                                placeholder="Upload Date"
+                                                style="background: #f1f1f1; border-radius: 0px;" id="section"
+                                                name="section">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6 p-3">
+                                            <label for="status"><small>ID no</small></label>
+                                            <input type="text" class="form-control input-group-sm" id="status"
+                                                placeholder="Enter ID no" style="background: #f1f1f1; border-radius: 0px;"
+                                                name="class">
+                                        </div>
+                                        
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-sm btn-warning"
+                                            style="border-radius: 0px; margin-top: 17px;"><small>Save</small></button>
+                                        <button type="button" class="btn btn-sm btn-primary"
+                                            style="border-radius: 0px; margin-top: 17px;"><small>Reset</small></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+              
+                <script>
+                    $(document).ready(function(){
+            $("#studentform").submit(function(e){
+            e.preventDefault()
+            let obj={}
+            let fd=new FormData(e.currentTarget)
+            fd.forEach((val,key)=>{
+            obj[key]=val
+            })
+            console.log(obj)
+            })
+                    });
+                </script>
+            
+         </section>
+         </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+  </body>
+
+</html>

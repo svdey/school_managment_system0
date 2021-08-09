@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- <script src="../../../public/js/addClass.js"></script> -->
+    <script src="../../../js/addClass.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+        <style>
+            body {
+                background: #f1f1f1;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+        </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+            <!-- Left side column. contains the logo and sidebar -->
+            <% include ../../partials/navbar.ejs %>
+
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <div class="container" style="background-color: white;">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <h5>Class Information
+                                            <i class="fa fa-angle-down pull-right" style="color: yellow"></i>
+                                            <i class="fa fa-refresh pull-right" style="color: green"></i>
+                                            <i class="fa fa-close pull-right" style="color: red"></i>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <form id="classform">
+                                            <div class="form-group">
+                                                <label for="name">Teacher Name:</label>
+                                                <input type="text" class="form-control" Name="teacherName"
+                                                    id="teacherName">
+                                                <label for="subject">Subject:</label>
+                                                <select class="form-control" Name="subject" id="subject">
+                                                    <option>Math</option>
+                                                    <option>Physics</option>
+                                                    <option>Science</option>
+                                                    <option>Urdu</option>
+                                                    <option>English</option>
+                                                    <option>History</option>
+                                                    <option>Geography</option>
+                                                </select>
+                                                <label for="mob">Mobile No</label>
+                                                <input type="text" class="form-control" Name="mobile" id="mobile">
+                                            </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="id">ID:</label>
+                                            <input type="text" class="form-control" Name="idno" id="idno">
+
+                                            <label for="Section">Section</label>
+                                            <select class="form-control" Name="section" id="section">
+                                                <option>A</option>
+                                                <option>B</option>
+                                                <option>C</option>
+                                                <option>D</option>
+                                            </select>
+                                            <label for="email">E-mail:</label>
+                                            <input type="text" class="form-control" Name="email" id="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="gender">Gender</label>
+                                            <select class="form-control" Name="gender" id="gender">
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <option>Others</option>
+                                            </select>
+                                            <label for="time">Time</label>
+                                            <input type="text" class="form-control" Name="time" id="time">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="class">Class</label>
+                                            <select class="form-control" Name="sclass" id="sclass">
+                                                <option>i</option>
+                                                <option>ii</option>
+                                                <option>iii</option>
+                                                <option>iv</option>
+                                                <option>v</option>
+                                            </select>
+                                            <label for="date">Date</label>
+                                            <input type="date" Name="date" class="form-control" id="date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="padding-bottom: 15px;">
+                                    <button type="button" class="btn btn-warning btn_save">Save</button>
+                                    <button type="reset" class="btn btn-info">Reset</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        </form>
+                </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+
+</html>

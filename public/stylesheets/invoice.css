@@ -1,0 +1,40 @@
+body{
+	padding:5%;
+	padding-top:0%;
+	background-color: white;
+	border-color: white;
+}
+
+.logo{
+	height: 50%;
+	width: 30%;
+	float:left;
+}
+.address{
+	float:right;
+	padding-top: 5%;
+}
+
+
+
+.amountBox th, .amountBox td {
+    border: 1px solid black;
+    padding:1%;
+}
+
+table.companyDetailsBox,table.amountBox {
+	border: 1px solid black;
+	border-collapse: collapse;
+    padding:1%;
+    width:100%;	
+}
+.companyDetailsBox th {
+	border: 1px solid black;
+    padding:1%;
+    
+}
+.companyDetailsBox td {
+	border: 1px solid black;
+    padding:1%;
+    
+}

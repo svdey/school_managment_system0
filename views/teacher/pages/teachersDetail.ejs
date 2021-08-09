@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="../../../js/addTeachers.js"></script>
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+      
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+        .container {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        #Home {
+            background-color: #f1f1f1;
+            border: black 1px;
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container" id="Home">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-3 mb-3" id="Home">
+                        <lable>Home - </lable><a>
+                            <lablel style="color:cornflowerblue">Teacher Details</lablel>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container" id="Details">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
+                        <strong><%=data.firstName%>
+                            <%=data.lastName%></strong>
+                        <i class="fa fa-close pull-right" style="color:red"></i>
+                        <i class="fa fa-refresh pull-right" style="color:green"></i>
+                        <i class="fa fa-angle-down pull-right" style="color:orange"></i>
+                        <hr>
+                    </div>
+        
+                    <!-- Teacher Details -->
+                    <div class="col-xs-12 col-sm-12 col-md-3 mt-4">
+                        <div class="card" style="width: 230px;">
+                            <img class="card-img-top" src="E:\avtar-imges1.jpg" alt="Card image" style="width:100%">
+                        </div>
+        
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 mt-4">
+                        <div class="btn pull-right">
+                            <button type="button" class="btn fa fa-edit" style="background: #f1f1f1;"></button>
+                            <button type="button" class="btn fa fa-print" style="background: #f1f1f1;"></button>
+                            <button type="button" class="btn fa fa-download" style="background: #f1f1f1;"></button>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                           
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td>Name:</td>
+                                        <td class="firstName"><strong>
+                                            <%=data.firstName%>
+                                            <%=data.lastName%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Gender:</td>
+                                        <td class="gender"><strong>
+                                            <%=data.gender%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Date of Birth:</td>
+                                        <td><strong>
+                                            <%=data.dateofbirth%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Religion:</td>
+                                        <td><strong>
+                                            <%=data.religion%> 
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email:</td>
+                                        <td><strong>
+                                            <%=data.email%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Joining Date:</td>
+                                        <td><strong>
+                                            <%=data.createdOn%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subject:</td>
+                                        <td><strong>
+                                            <%=data.subject%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class:</td>
+                                        <td><strong>
+                                            <%=data.sclass%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Section:</td>
+                                        <td><strong>
+                                            <%=data.section%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID:</td>
+                                        <td><strong>
+                                            <%=data.idno%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address:</td>
+                                        <td><strong>
+                                            <%=data.address%>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone:</td>
+                                        <td><strong>
+                                            <%=data.phone%>  
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+        
+                            <!-- Teacher Details End -->
+                        </div>
+        
+                    </div>
+        
+                </div>
+        
+            </div>
+            
+         </section>
+         </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+  </body>
+
+</html>

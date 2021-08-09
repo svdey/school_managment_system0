@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- <script src="../../../public/js/addTeachers.js"></script> -->
+    <script src="../../../js/addTeachers.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+      
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+        .container {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        #Home {
+            background: #f1f1f1;
+        }
+    
+        .form-control {
+            background: #f1f1f1;
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          
+            <div class="container" id="Home">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-3 mb-3" id="Home">
+                        <lable>Home - </lable><a>
+                            <lablel style="color:cornflowerblue">Add New Teacher</lablel>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="Details">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
+                        <strong>Teacher Information</strong>
+                        <i class="fa fa-close pull-right" style="color:red"></i>
+                        <i class="fa fa-refresh pull-right" style="color:green"></i>
+                        <i class="fa fa-angle-down pull-right" style="color:orange"></i>
+                        <hr>
+                    </div>
+                    <!-- Teacher Information -->
+                    <div class="col-xs-12 col-sm-12 col-md-3 mt-4">
+                        <form id="studentform">
+                        <div class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" Name="firstname" id="firstname">
+                            <label for="firstname" class="mt-2">Gender*</label>
+                            <select class="form-control" Name="gender" id="gender">
+                                <option selected>Please Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="religion" class="mt-2">Religion</label>
+                            <input type="text" class="form-control" Name="religion" id="religion">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 mt-4">
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="form-control" Name="lastname" id="lastname">
+                            <label for="dateofbirth" class="mt-2">Date of Birth</label>
+                            <input type="date" class="form-control" Name="dateofbirth" id="dateofbirth">
+                            <label for="email" class="mt-2">E-mail</label>
+                            <input type="email" class="form-control" Name="email" id="email">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 mt-4">
+                        <div class="form-group">
+                            <label for="sclass">Class</label>
+                            <select class="form-control" id="sclass" Name="sclass">
+                                <option selected>Please Select Class</option>
+                                <option value="i">i</option>
+                                <option value="ii">ii</option>
+                                <option value="iii">iii</option>
+                            </select>
+                            <label for="ID No" class="mt-2">ID No</label>
+                            <input type="number" class="form-control" Name="idno" id="idno">
+                            <label for="phone" class="mt-2">Phone No</label>
+                            <input type="number" class="form-control" Name="phone" id="phone">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 mt-4">
+                        <div class="form-group">
+                            <label for="section">Section</label>
+                            <select class="form-control" Name="section" id="section">
+                                <option selected>Please Select Section</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+                            <label for="subject" class="mt-2">Subject</label>
+                            <select class="form-control" Name="subject" id="subject">
+                                <option selected>Please Select Subject</option>
+                                <option value="Math">Math</option>
+                                <option value="English">English</option>
+                                <option value="History">History</option>
+                            </select>
+                            <label for="address" class="mt-2">Address</label>
+                            <input type="text" class="form-control" Name="address" id="address">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 mt-4">
+                        <lable for="uploadfile" class="mt-2">Upload Teacher Photo(150px X 150px)</lable>
+                        <input type="file" class="mt-2">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
+                        <button type="button" class="btn btn-warning btn-lg btn_save">Save</button>
+                        <button type="reset" class="btn btn-primary btn-lg">Reset</button>
+                    </div>
+                </div>
+            </form>
+                
+            
+         </section>
+         </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+  </body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../../js/addmissionForm.js"></script>
+    <title>Addmission Form</title>
+    <% include ../../partials/css.ejs %>
+        <style>
+            body {
+                background: #f1f1f1;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+
+            body {
+                background-color: #f3f4ed;
+                padding-top: 40px;
+            }
+
+            .form-control {
+                background-color: #f3f4ed;
+            }
+        </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+            <!-- Left side column. contains the logo and sidebar -->
+            <% include ../../partials/navbar.ejs %>
+
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <div class="container" style="background-color: #f3f4ed;">
+                            <h6>Homes-<strong>Student Form</strong></h6>
+                        </div>
+                        <div class="container" style="background-color: white;">
+                            <div class="container" id="header">
+                                <h3><strong>Student Admission Form</strong>
+                                    <i class="fa fa-arrow-down pull-right" style="color:yellow;"></i>
+                                    <i class="fa fa-refresh pull-right" style="color:green;"></i>
+                                    <i class="fa fa-close pull-right" style="color:red;"></i>
+                                </h3>
+                                <hr>
+                            </div>
+                            <div class="container">
+                                <h3><u>Student Information</u></h3>
+                                <form id="addmission_form">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="name">Student Name</label>
+                                            <input name="std_name" class="form-control" id="std_name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="gender">Gender</label>
+                                            <select class="form-control" name="gender" id="gender">
+                                                <option>Female</option>
+                                                <option>Male</option>Select Gender
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="religon">Religion</label>
+                                            <input name="religon" type="text" class="form-control" id="religon">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="lastname">Last Name</label>
+                                            <input name="lastname" type="text" class="form-control" id="lastname">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="dob">Date Of Birth</label>
+                                            <input name="dob" type="date" class="form-control" id="dob">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="email">Email-ID</label>
+                                            <input name="email" type="email" class="form-control" id="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="class">Class </label>
+                                            <select class="form-control" name="class_study" id="class_study">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option> Please Select the Class
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="roll">Roll</label>
+                                            <input name="roll" type="text" class="form-control" id="roll">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="student photo">Upload Student Photo (150px X 150px)</label>
+                                            <input name="std_photo" type="file" id="std_photo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="section">Section</label>
+                                            <select class="form-control" name="section" id="section">
+                                                <option>A</option>
+                                                <option>B</option>
+                                                <option>C</option>
+                                                <option>D</option>select Section
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="add no">Admission Number</label>
+                                            <input name="add_no" type="text" class="form-control" id="add_no">
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <h3><u>Parents Information</u></h3>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="father">Father's Name</label>
+                                    <input name="father_name" type="text" class="form-control" id="father_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobile">Mobile No</label>
+                                    <input name="mobile" type="text" class="form-control" id="mobile">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="mother">Mother's Name</label>
+                                    <input name="mother_name" type="text" class="form-control" id="mother_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nationality">Nationality</label>
+                                    <select class="form-control" name="nationality" id="nationality">
+                                        <option>Indian</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="father occupation">Father's Occupation</label>
+                                    <input name="father_occup" type="text" class="form-control" id="father_occup">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Parent's Address</label>
+                                    <input name="address" type="text" class="form-control" id="address">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="mother occupation">Mother's Occupation</label>
+                                    <input name="mother_occup" type="text" class="form-control" id="mother_occup">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Parmanent Address</label>
+                                    <input name="permt_address" type="text" class="form-control" id="permt_address">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="file">Upload Parent's photo(150px X 150px)</label>
+                                    <input name="parent_photo" type="file" id="parent_photo">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4" style="padding-bottom: 15px;">
+                                <button type="button" class="btn btn-primary btn_submit">Submit</button>
+                                <button type="reset" class="btn btn-danger btn_reset"> Reset</button>
+                            </div>
+              
+                        </div>
+
+                    </form>
+
+                        
+
+                    </section>
+                </div>
+                <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+
+
+
+</html>

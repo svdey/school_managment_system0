@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <title>Account Setting</title>
+        <% include ../partials/css.ejs %>
+        <style>
+            .form_bg {
+                background: #f1f1f1;
+            }
+        </style>
+    </head>
+
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <div class="container">
+            <div class="container" style="background:#f1f1f1"><br><br>
+                <p>Home - <span><a>Account setting</a></span></p>
+                <div class="row">
+                    <div class="col-md-4" style="background:#f1f1f1;margin-left:10px;margin-bottom:30px">
+                        <div class="row">
+                            <div class="col-md-12" style="background:white;margin-bottom:2px;">
+                                <label>
+                                    <h4 style="font-weight:bold">Account Setting</h4>
+                                </label>
+                                <div class="btn-group pull-right">
+                                    <button type="button" class="btn btn_cur glyphicon glyphicon-ok"
+                                        style="color:green;background:white"></button>
+                                    <button type="button" class="btn btn_refresh glyphicon glyphicon-refresh"
+                                        style="color:green;background:white"></button>
+                                    <button type="button" class="btn btn_save glyphicon glyphicon-remove"
+                                        style="color:red;background:white"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="background:white">
+                                <form id="profile_setting">
+                                    <div class="form-group"><br>
+                                        <label for="fname">First Name</label>
+                                        <input type="text" class="form-control form_bg" id="fname" name="fname">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lname">Last Name</label>
+                                        <input type="text" class="form-control form_bg" id="lname" name="lname">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addresss">Address</label>
+                                        <input type="text" class="form-control form_bg" id="addresss" name="address">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Phone">Phone</label>
+                                        <input type="text" class="form-control form_bg" id="Phone" name="Phone">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">E-mail</label>
+                                        <input type="text" class="form-control form_bg" id="email" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="scode">School Code</label>
+                                        <input type="text" class="form-control form_bg" id="scode" name="scode">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="session">Session</label>
+                                        <input type="text" class="form-control form_bg" id="session" name="session">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lang">Language</label>
+                                        <select class="form-control form_bg">
+                                            <option>
+                                            </option>
+                                            <option>Hindi
+                                            </option>
+                                            <option>English
+                                            </option>
+                                            <option>Bengali
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jdate">Joining Date</label>
+                                        <input type="date" class="form-control form_bg" id="jdate" name="jdate">
+                                    </div><br>
+                                    <h4>Upload Student Photo(150px X 150px)</h4>
+                                    <input type="file" style="margin-left:90px"><br>
+                                    <button type="button" class="btn btn-lg"
+                                        style="color:white;background:#f6bd0bd6;margin-left:70px">Update</button>
+                                    <button type="button" class="btn btn-lg"
+                                        style=" color:white;margin-left:10px;background:#04043a">Reset</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7" style="background:#f1f1f1;margin-left:30px;">
+                        <div class="row">
+                            <div class="col-md-12" style="background:white;margin-bottom:2px;">
+                                <label>
+                                    <h4 style="font-weight:bold">User Profile</h4>
+                                </label>
+                                <div class="btn-group pull-right">
+                                    <button type="button" class="btn btn_cut glyphicon glyphicon-ok"
+                                        style="color:green;background:white"></button>
+                                    <button type="button" class="btn btn_refresh glyphicon glyphicon-refresh"
+                                        style="color:green;background:white"></button>
+                                    <button type="button" class="btn btn_save glyphicon glyphicon-remove"
+                                        style="color:red;background:white"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="background:white">
+                                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                    <img src="user_img.jpg" class="responsive" width="100%" height="100%"
+                                        style="margin-top:20px;">
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <th>Name:</th>
+                                            <td>Kazi Farhimur Rahman</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Gender:</th>
+                                            <td>Male</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Address:</th>
+                                            <td>Asansol</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Phone:</th>
+                                            <td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <th>E-mail:</th>
+                                            <td>User@gmail.com</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th>School Code:</th>
+                                            <td>7890</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Session:</th>
+                                            <td>2020-2021</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Language:</th>
+                                            <td>English</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Joining Date:</th>
+                                            <td>March 21st,2020 </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <script>
+                    $(document).ready(function(){
+            $("#profile_setting").submit(function(e){
+            e.preventDefault()
+            let obj={}
+            let fd=new FormData(e.currentTarget)
+            fd.forEach((val,key)=>{
+            obj[key]=val
+            })
+            console.log(obj)
+            })
+                    });
+                </script>
+            
+         </section>
+         </div>
+    <% include ../partials/scriptsAdmin.ejs %>
+  </body>
+
+</html>

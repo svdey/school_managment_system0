@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Transport</title>
+  <% include ../../partials/css.ejs %>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-transform: capitalize;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #e9ecef;
+      }
+
+      /* add section starts */
+      .add-section {
+        background-color: white;
+        height: auto;
+      }
+
+      .trans-heading h4 {
+
+        display: inline-block;
+        padding-top: 13px;
+        padding-left: 5px;
+      }
+
+      .form-group label {
+        padding-left: 5px;
+
+      }
+
+      .form-group .transport-text {
+        background-color: #e9ecef;
+        padding-left: 10px;
+      }
+
+      .form-group .btn {
+        margin-top: 10px;
+      }
+
+      .trans-icon {
+        padding-top: 20px;
+        padding-right: 4px;
+
+      }
+
+      .trans-heading .trans-icon .fa {
+        cursor: pointer;
+      }
+
+      .transport-list {
+        display: flex;
+        justify-content: space-between;
+
+      }
+
+
+      .list-section {
+        background-color: white;
+      }
+
+
+      .search-bar .search-text {
+
+        border-radius: 30px;
+        border: 0px solid;
+        margin: 3px;
+        padding: 5px;
+        background-color: #e9ecef;
+        font-size: 10px;
+
+      }
+
+      .search-bar #search-btn {
+        border-radius: 20px;
+        font-size: 10px;
+      }
+
+      .trans-i .fa {
+        cursor: pointer;
+      }
+
+      .transport-table table th,
+      td {
+        font-size: small;
+      }
+
+      .transport-table table tbody td .fa {
+        margin-right: 5px;
+      }
+
+
+      .transport-table table tr:nth-child(even) {
+        background-color: #e9ecef;
+      }
+
+      .txt {
+        width: 145px;
+      }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <!-- Header Section -->
+    <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+          <section class="content-header">
+            <div class="container-fluid mt-5">
+              <section class="section ">
+                <div class="row ">
+                  <div class=" col-xl-3 col-lg-12 col-md-12 col-sm-12 add-section m-2">
+                    <div class="trans-heading">
+                      <h4>add new transport</h4>
+                      <span class="trans-icon pull-right">
+                        <i class="fa fa-angle-down text-warning "></i>
+                        <i class="fa fa-refresh  btn_refresh ml-1 text-success"></i>
+                        <i class="fa fa-times ml-1 text-danger"></i>
+                      </span>
+                      <hr>
+                    </div>
+                    <form id="submitform" class="pb-3">
+                      <div class="form-group">
+                        <label for="rutename">rute Name</label>
+                        <input type="text" name="rutename" class="form-control rutename transport-text" required="true">
+                      </div>
+                      <div class="form-group">
+                        <label for="vechilenumber">vechile number</label>
+                        <input type="text" name="vechilenumber" class="form-control vechilenumber transport-text"
+                          required="true">
+                      </div>
+                      <div class="form-group">
+                        <label for="drivername"> driver name</label>
+                        <input type="text" name="drivername" class="form-control drivername transport-text"
+                          required="true">
+                      </div>
+                      <div class="form-group">
+                        <label for="licensenumber">license number</label>
+                        <input type="text" name="licensenumber" class="form-control licensenumber transport-text"
+                          required="true">
+                      </div>
+                      <div class="form-group">
+                        <label for="phnumber">phone number</label>
+                        <input type="text" name="phnumber" class="form-control phnumber transport-text" required="true">
+                      </div>
+                      <div class="mt-1">
+                        <button class="btn btn-warning" type="submit" id="btn-submit">Submit</button>
+                        <button class="btn btn-primary" type="reset" id="reset-btn">Reset</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class=" col-xl-8 col-lg-12 col-md-12 col-sm-12 m-2 list-section" style="overflow-x:auto;">
+                    <div class="transport-list mt-3">
+                      <div class="transport-table table-responsive">
+                        <table class="table mt-3" id="tblTransport">
+                          <%if(driverList && driverList.length>0){%>
+                            <thead>
+                              <tr>
+                                <th> <input type="checkbox" id="rute-name" name="rutename" value="rute" class="m-2">rute
+                                  name</th>
+                                <th>vechile no</th>
+                                <th>driver name</i></th>
+                                <th>driver license</th>
+                                <th>contact no</th>
+                                <th>action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% for(var i=0;i< driverList.length;i++){%>
+                                <tr>
+                                  <td class="ruteName"> <input type="checkbox" id="rute-name" name="rutename"
+                                      value="rute" class="m-2">
+                                    <%=driverList[i].ruteName%>
+                                  </td>
+                                  <td class="vechileNumber">
+                                    <%=driverList[i].vechileNumber%>
+                                  </td>
+                                  <td class="driverName">
+                                    <%=driverList[i].driverName%>
+                                  </td>
+                                  <td class="licenseNumber">
+                                    <%=driverList[i].licenseNumber%>
+                                  </td>
+                                  <td class="phNumber">
+                                    <%=driverList[i].phNumber%>
+                                  </td>
+                                  <td><button type="button" class="btn_eye fa fa-eye 
+                                                                    " data-toggle="modal" data-target="#myModal">
+                                    </button>
+                                    <button type="button" value="<%=driverList[i]._id%>" class="btn_edit fa fa-pencil-square-o 
+                                                                        text-success">
+                                    </button>
+                                    <button type="button" value="<%=driverList[i]._id%>" class="btn_delete fa fa-trash-o
+                                                                        text-danger">
+                                    </button>
+                                  </td>
+                                </tr>
+                                <%}%>
+                            </tbody>
+                        </table>
+                        <%}else{%>
+                          <div>
+                            <h3 class="text-center text-danger">No record found !!!</h3>
+                          </div>
+                          <%}%>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+        </div>
+  </div>
+  <!-- edit modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Current record</h3>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="ruteName">Rute Name</label>
+              <input type="text" class="form-control" id="ruteName" readonly />
+            </div>
+            <div class="form-group">
+              <label for="vechileNumber">vechile number:</label>
+              <input type="text" class="form-control" id="vechileNumber" readonly />
+            </div>
+            <div class="form-group">
+              <label for="driverName">driver name:</label>
+              <input type="text" class="form-control" id="driverName" readonly />
+            </div>
+            <div class="form-group">
+              <label for="licenseNumber">license number:</label>
+              <input type="text" class="form-control" id="licenseNumber" readonly />
+            </div>
+            <div class="form-group">
+              <label for="phNumber">phone number:</label>
+              <input type="text" class="form-control" id="phNumber" readonly />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../../js/transport.js"></script>
+
+  <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+
+</html>

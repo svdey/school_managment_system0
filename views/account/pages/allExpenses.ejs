@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+
+        .fa {
+            cursor: pointer;
+        }
+
+        .table_wrap {
+            min-height: 350px;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+
+        .fa {
+            cursor: pointer;
+        }
+
+        .table_wrap {
+            min-height: 350px;
+        }
+
+        .table_wrap {
+            min-height: 350px;
+        }
+
+        .container {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .card {
+            border-radius: 0px;
+            height: 76px;
+        }
+
+        .card-body {
+            margin-top: -10px;
+            margin-right: 2px;
+        }
+
+        body {
+            background: #f1f1f1;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        .search-bar .search-text {
+            border-radius: 30px;
+            border: 0px solid;
+            margin: 3px;
+            padding: 5px;
+            background-color: #e9ecef;
+            font-size: 10px;
+            padding-bottom: 2px;
+        }
+
+        .search-bar #search-btn {
+            border-radius: 20px;
+            font-size: 10px;
+            padding-bottom: 2px;
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+        <!-- Left side column. contains the logo and sidebar -->
+        <% include ../../partials/navbar.ejs %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container p-3">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-xs-12">
+                            <h6>Home - <strong>Fees Collection</strong></h6>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-xs-12">
+                            <div class="card" style="min-height: 380px;">
+                                <div class="card-body">
+                                    <span style="float: left;">Student Collection Fees Table</span>
+                                    <!-- <form style="float: right;">
+                                    <div class="row">
+                                      <div class="col-xs-12">
+                                        <input type="text" class="form-control mr-3" id="email" placeholder="Enter email" name="email" style="height: 20px; width: 100px;border-radius: 5px;
+                                        border-radius: 5px;">
+                                      </div>
+                                      <div class="col-xs-12">
+                                        <input type="password" class="form-control mr-3" placeholder="Enter password" name="pswd" style="height: 20px; width: 100px;border-radius: 5px;
+                                        border-radius: 5px;">
+                                      </div>
+                                      <div class="col-xs-12">
+                                        <button type="button" class="btn btn-primary" style="height: 20px; width: 78px; margin-bottom: 9px; border-radius: 5px; padding-top: 0px;">Submit</button>
+                                      </div>
+                                    </div>
+                                  </form> -->
+                                    <span class="form-group float-right search-bar">
+                                        <input type="text" id="search-text" class=" search-text "
+                                            placeholder="search byhostel..." />
+                                        <input type="text" id="search-text" class=" search-text "
+                                            placeholder="search bybed..." />
+                                        <input type="text" id="search-text" class=" search-text "
+                                            placeholder="search byroom..." />
+                                        <button id="search-btn" type="button"
+                                            class="btn btn-primary btn-sm">SEARCH</button>
+                                    </span>
+
+                                    <hr style="width: 100%; margin-top: 28px;">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-sm table-hover">
+                                            <thead>
+                                                <th>Book Name</th>
+                                                <th>Subject</th>
+                                                <th>Writer</th>
+                                                <th>Class</th>
+                                                <th>Year</th>
+                                                <th>Date</th>
+                                            </thead>
+                                            <tbody>
+                                                <%for(var i=0;i< expence.length;i++){%>
+                                                <tr>
+                                                    <td><%=expence[i].book%></td>
+                                                    <td><%=expence[i].subject%></td>
+                                                    <td><%=expence[i].writer%></td>
+                                                    <td><%=expence[i].myclass%></td>
+                                                    <td><%=expence[i].year%></td>
+                                                    <td><%=expence[i].date%></td>
+                                                    <td><button type="button" class="btn btn-danger btn_delete"
+                                                            value="<%=expence[i]._id%>">Delete</button> </td>
+                                                </tr>
+                                                <%}%>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            
+         </section>
+         </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+<script src="../../../js/allExpences.js"></script>
+
+</html>

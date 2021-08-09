@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Add Question</title>
+    <% include ../../partials/css.ejs %>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                text-transform: capitalize;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background: #f1f1f1;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+
+            .container {
+                font-family: 'Noto Sans JP', sans-serif;
+            }
+
+            #Home {
+                background-color: #f1f1f1;
+                border: black 1px;
+            }
+
+
+            .main,
+            #display {
+                background-color: #fff;
+            }
+
+            .main form {
+                padding: 10px;
+            }
+
+            .option_div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .inner_div {
+                padding-left: 20px;
+                margin-top: 25px;
+                margin-left: 30px;
+                padding-top: 10px;
+                padding-bottom: 30px;
+            }
+
+            #answer {
+                width: 50%;
+                color: black;
+            }
+
+            h4 {
+                display: inline;
+            }
+
+            .ans_label {
+                font-weight: bold;
+            }
+
+            .nav li {
+                width: 24%;
+                text-align: center;
+            }
+        </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+            <!-- Left side column. contains the logo and sidebar -->
+            <% include ../../partials/navbar.ejs %>
+
+
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <div class="container" id="Details">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
+                                    <strong>Add Question Here</strong>
+                                    <i class="fa fa-close pull-right" style="color:red"></i>
+                                    <i class="fa fa-refresh pull-right" style="color:green"></i>
+                                    <i class="fa fa-angle-down pull-right" style="color:orange"></i>
+                                    <hr>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                                        role="tab" aria-controls="pills-home" aria-selected="true">MCQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                                        role="tab" aria-controls="pills-profile" aria-selected="false">True or False</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
+                                        role="tab" aria-controls="pills-contact" aria-selected="false">SAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
+                                        role="tab" aria-controls="pills-contact" aria-selected="false">Fill the
+                                        Blanks</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+
+
+                                <!-- MCQ -->
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                    aria-labelledby="pills-home-tab">
+                                    <div class="main">
+                                        <form action="" id="form_submit">
+                                            <div class="form-group">
+                                                <label for="question">write your question here</label>
+                                                <input type="text" class="form-control" name="question" id="question"
+                                                    required="true" />
+                                            </div>
+                                            <div class="option_div">
+                                                <div class="form-group">
+                                                    <label for="op1">option 1</label>
+                                                    <input type="text" class="form-control options" id="op1" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="op2">option 2</label>
+                                                    <input type="text" class="form-control options" id="op2" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="op3">option 3</label>
+                                                    <input type="text" class="form-control options" id="op3" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="op4">option 4</label>
+                                                    <input type="text" class="form-control options" id="op4" required />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="answer">pick your correct answer here</label>
+                                                <select name="answer" id="answer" class="form-control">
+                                                    <option value="" selected>Select
+                                                    </option>
+                                                    <option value="option1">1</option>
+                                                    <option value="option2">2</option>
+                                                    <option value="option3">3</option>
+                                                    <option value="option4">4</option>
+                                                </select>
+                                            </div>
+
+                                            <button type="submit" id="add" class="btn btn-primary">Add Question</button>
+                                        </form>
+                                    </div>
+                                    <div id="display">
+
+                                    </div>
+
+                                </div>
+                                <!-- T or False -->
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab">
+
+
+                                </div>
+                                <!-- SAQ -->
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab">
+
+                                </div>
+                                <!-- Fill Blanks -->
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                </div>
+    </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+        <script>
+            // var arr = []
+            // function show(arg) {
+            //     $("#display").html("")
+            //     for (let index = 0; index < arg.length; index++) {
+            //         $("#display").append(`<div class="inner_div">
+            //             <h2 class="ques">Q${index + 1}. ${arg[index].question}</h2>
+            //          <ol>
+            //             <li class="op1">${arg[index].option[0]}</li>
+            //             <li class="op2">${arg[index].option[1]}</li>
+            //             <li class="op3">${arg[index].option[2]}</li>
+            //             <li class="op4">${arg[index].option[3]}</li>
+            //         </ol>
+            //         <h4 class="ans_label">answer : </h4><h4 class="ans">${arg[index].answer}</h4>
+            //         <div class="button">
+            //         <button id="edit" class="btn btn-success">Edit</button> 
+            //         <button id="delete" class="btn btn-danger">Delete</button>
+            //         </div>
+            //         </div>`);
+            //     }
+            // }
+            // function displayBlank() {
+            //     $("#display").html("");
+            // }
+            $(document).ready(function () {
+                $("#form_submit").submit(function (e) {
+                    e.preventDefault();
+                    console.log("add");
+                    var question = $("#question").val();
+                    var answer = $("#answer").val();
+                    console.log(question);
+                    console.log(answer);
+                    var op1 = $("#op1").val();
+                    var op2 = $("#op2").val();
+                    var op3 = $("#op3").val();
+                    var op4 = $("#op4").val();
+                    var option = [];
+                    option.push(op1, op2, op3, op4);
+                    console.log(option);
+                    var obj = {
+                        question: question,
+                        option: option,
+                        answer: answer,
+                    }
+                    // arr.push(obj);
+                    console.log("obj---->", obj);
+                    $.ajax({
+                        url: "/question-data",
+                        type: "POST",
+                        data: arr,
+                        success: function (res) {
+                            if (res.success) {
+                                alert(res.success);
+                                window.location.href =
+                                    window.location.pathname.split("/")[0] + "addQuestion";
+                            } else if (res.error) {
+                                alert(res.error);
+                                window.location.reload();
+                            }
+                        },
+                    });
+                });
+
+            });
+
+        </script>
+</body>
+
+</html>

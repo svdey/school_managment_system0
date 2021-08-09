@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+      
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .table_wrap{
+            min-height:350px;
+        }
+        .grid
+  {min-height:70px;
+  background-color: #fff;
+  }
+  .input-group input-group-sm
+  {min-height:30px;
+  margin-left:200px;
+  }
+  .fas fa-user-circle
+  {font-size:50px}
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini" >
+    <div class="wrapper">
+      <!--Header Section-->
+      <% include ../../partials/header.ejs %>
+      <!-- Left side column. contains the logo and sidebar -->
+      <% include ../../partials/navbar.ejs %>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="grid">
+                   <div class="row">
+                     <div class="grid">
+                         home - <a href ="#">All Parents</a>
+                         <form class="form-inline" action="/action_page.php">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <strong>Parents List</strong>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text" class="form-control" id="email"
+                                                            placeholder="#ID Type Here..."name="ID">
+                                                    </div>
+                                                </div>
+                        </form>						
+              </div>
+            </div>	
+        <div class="container-fluid">           
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th><i class="far fa-square"></i>  Id  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Photo  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Name  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Gender  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Occupation  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Address  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Mobile No  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Email  <i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color:red; margin-left: 50px; font-size:30px"></i></td>      
+                  <td>Elina Gilbert</td>
+                  <td>Female</td>
+                  <td>House Wife</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>987476372</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+             <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: black; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Stefan Salvator</td>
+                  <td>Male</td>
+                  <td>Banker</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>984746733</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes  <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+             <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: maroon; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Demon Salvator</td>
+                  <td>Male</td>
+                  <td>Accountant</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>983763628</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes  <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: blue; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Ealija Mikelson</td>
+                  <td>Male</td>
+                  <td>engineer</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>983627372</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes  <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: red; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Jeremy Gilbert</td>
+                  <td>Male</td>
+                  <td>plumber</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>937837762</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color:gray; margin-left: 50px; font-size:30px"></i></td>
+                  <td>caroline</td>
+                  <td>Female</td>
+                  <td>designer</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>983736829</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: black; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Katherina</td>
+                  <td>Female</td>
+                  <td>painter</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>987365272</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: green; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Bonnie Bennet</td>
+                  <td>Female</td>
+                  <td>house wife</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>973572722</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: maroon; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Klaus Mikelson</td>
+                  <td>Male</td>
+                  <td>footballer</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>700173722</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: blue; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Alaric</td>
+                  <td>Male</td>
+                  <td>cricketer</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>700137473</td>
+                 <td>edisons@gmail.com</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: black; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Silas</td>
+                  <td>Male</td>
+                  <td>writer</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>700174783</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td><i class="far fa-square"></i>  #2901</td>
+                  <td><i class="fas fa-user-circle"style="color: green; margin-left: 50px; font-size:30px"></i></td>
+                  <td>Marcellus</td>
+                  <td>Male</td>
+                  <td>singer</td>
+                  <td>Ismail more, hutton road</td>
+                  <td>700173464</td>
+                  <td>edisons@gmail.com</td>
+                  <td>Yes   <i class="fas fa-eye"style="color: gray; margin-left: 8px"></i>
+                  <i class="fas fa-edit"style="color:green; margin-left: 8px"></i>   
+                  <a href ="#"><i class="fas fa-trash-alt"style="color: red; margin-left: 8px"></i></a></td>
+                </tr>
+              </tbody>
+              <tbody>
+          </table>
+        </div>
+              
+                <script>
+                    $(document).ready(function(){
+            $("#studentform").submit(function(e){
+            e.preventDefault()
+            let obj={}
+            let fd=new FormData(e.currentTarget)
+            fd.forEach((val,key)=>{
+            obj[key]=val
+            })
+            console.log(obj)
+            })
+                    });
+                </script>
+            
+         </section>
+         </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+  </body>
+
+</html>

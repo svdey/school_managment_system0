@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../../js/addClass.js"></script>
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+        <style>
+            body {
+                background: #f1f1f1;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+
+            .form-control {
+                background-color: #f1f1f1;
+            }
+
+            .form {
+                background: white;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+
+            .table_wrap {
+                min-height: 350px;
+            }
+        </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+            <!-- Left side column. contains the logo and sidebar -->
+            <% include ../../partials/navbar.ejs %>
+
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <div class="container">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <h4>All Class Schedule
+                                    <i class="fa fa-angle-down pull-right" style="color: yellow"></i>
+                                    <i class="fa fa-refresh pull-right" style="color: green"></i>
+                                    <i class="fa fa-close pull-right" style="color: red"></i>
+                                </h4>
+                                <div class="container">
+                                    <div class="row">
+                                        <table class="table table-striped" id="tbladdClass">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Teacher Name</th>
+                                                    <th>Gender</th>
+                                                    <th>Subject</th>
+                                                    <th>Class</th>
+                                                    <th>Section</th>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>Mobile No</th>
+                                                    <th>E-mail</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <%for(var i=0;i< myclass.length;i++){%>
+                                                    <tr>
+                                                        <td>
+                                                            <%=myclass[i].idno%>
+                                                        </td>
+                                                        <td>
+                                                            <%=myclass[i].teacherName%>
+                                                        </td>
+                                                        <td>
+                                                            <%=myclass[i].gender%>
+                                                        </td>
+                                                        <td>
+                                                            <%=myclass[i].subject%>
+                                                        </td>
+                                                        <td>
+                                                            <%=myclass[i].sclass%>
+                                                        </td>
+                                                        <td>
+                                                            <%=myclass[i].section%>
+                                                        </td>
+                                                        <td>
+                                                            <%=myclass[i].date%>
+                                                        </td>
+                                                        <td>
+                                                            <%=myclass[i].time%>
+                                                        </td>
+                                                        <td>
+                                                            <%=myclass[i].mobile%>
+                                                        </td>
+                                                        <td>
+                                                            <%=myclass[i].email%>
+                                                        </td>
+                                                        <td><button type="button" class="btn_eye fa fa-eye 
+                                                            ">
+                                                            </button>
+                                                            <button type="button" value="<%=myclass[i]._id%>" class="btn_edit fa fa-pencil-square-o 
+                                                                text-success">
+                                                            </button>
+                                                            <button type="button" value="<%=myclass[i]._id%>" class="btn_delete fa fa-trash-o
+                                                                text-danger">
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <%}%>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+
+
+                </section>
+    </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+
+</html>

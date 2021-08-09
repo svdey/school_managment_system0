@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Exam Schedule</title>
+    <% include ../../partials/css.ejs %>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                text-transform: capitalize;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background-color: #e9ecef;
+            }
+
+            .add-section {
+                background-color: white;
+                height: max-content;
+            }
+
+            .trans-heading .heading {
+
+                display: inline-block;
+                padding-top: 13px;
+                padding-left: 5px;
+            }
+
+            .form-group label {
+                padding-left: 5px;
+
+            }
+
+            .form-group .transport-text {
+
+                background-color: #e9ecef;
+                padding-left: 10px;
+            }
+
+            .inside-btn {
+                border: 1px solid #e9ecef;
+                background-color: #e9ecef;
+                border-radius: 4px;
+            }
+
+            .inside-btn .btn {
+                background-color: transparent;
+                margin-bottom: 5px;
+
+            }
+
+            .form-group .btn {
+                margin-top: 10px;
+            }
+
+            .trans-icon {
+                padding-top: 20px;
+                padding-right: 4px;
+
+            }
+
+            .trans-heading .trans-icon .fa {
+                cursor: pointer;
+            }
+
+            .transport-list {
+                display: flex;
+                justify-content: space-between;
+
+            }
+
+
+            .list-section {
+                height: auto;
+                background-color: white;
+            }
+
+
+            .search-bar .search-text {
+
+                border-radius: 30px;
+                border: 0px solid;
+                margin: 3px;
+                padding: 5px;
+                background-color: #e9ecef;
+                font-size: 10px;
+
+            }
+
+            .search-bar #search {
+                border-radius: 20px;
+                font-size: 10px;
+            }
+
+            .trans-i .fa {
+                cursor: pointer;
+            }
+
+            .transport-table table th,
+            td {
+                font-size: small;
+            }
+
+            .transport-table table tbody td .fa {
+                margin-right: 5px;
+            }
+
+
+            .transport-table table tr:nth-child(even) {
+                background-color: #e9ecef;
+            }
+
+            .dateTime {
+                display: flex;
+                justify-content: center;
+            }
+
+            .txt {
+                width: 95px;
+            }
+        </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+            <!-- Left side column. contains the logo and sidebar -->
+            <% include ../../partials/navbar.ejs %>
+
+                <!-- Content Wrapper. Contains page content -->
+                <div class="content-wrapper">
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <div class="container-fluid mt-5">
+                            <div class="row">
+                                <div class=" col-xl-3 col-lg-12 col-md-12 col-sm-12 add-section m-2">
+                                    <div class="trans-heading">
+                                        <h4 class="heading">add new exam</h4>
+                                        <span class="trans-icon pull-right">
+                                            <i class="fa fa-angle-down text-warning "></i>
+                                            <i class="fa fa-refresh btn_refresh ml-1 text-success"></i>
+                                            <i class="fa fa-times ml-1 text-danger"></i>
+                                        </span>
+                                        <hr>
+                                    </div>
+                                    <form id="submitform" class="pb-3">
+                                        <div class="form-group">
+                                            <label for="exam">exam
+                                                Name</label>
+                                            <input type="text" name="exam" class="form-control transport-text"
+                                                required="true">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subject">subject
+                                                type</label>
+                                            <select name="subject" class="form-control transport-text" id="subject">
+                                                <option value="" selected>Select
+                                                </option>
+                                                <option value="Mathmatics">Mathmatics
+                                                </option>
+                                                <option value="English">English
+                                                </option>
+                                                <option value="Geography">Geography
+                                                </option>
+                                                <option value="Computer">Computer
+                                                </option>
+                                                <option value="Hindi">Hindi
+                                                </option>
+                                                <option value="Bengali">Bengali
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="class">select
+                                                class</label>
+                                            <select name="class" class="form-control transport-text" id="class">
+                                                <option value="" selected>Select
+                                                </option>
+                                                <option value="1">1
+                                                </option>
+                                                <option value="2">2
+                                                </option>
+                                                </option>
+                                                <option value="3">3
+                                                </option>
+                                                <option value="4">4
+                                                </option>
+                                                </option>
+                                                <option value="5">5
+                                                </option>
+                                                <option value="6">6
+                                                </option>
+                                                </option>
+                                                <option value="7">7
+                                                </option>
+                                                <option value="8">8
+                                                </option>
+                                                </option>
+                                                <option value="9">9
+                                                </option>
+                                                <option value="10">10
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="section">select
+                                                section</label>
+                                            <select name="section" class="form-control transport-text" id="section">
+                                                <option value="" selected>Select
+                                                </option>
+                                                <option value="A">A
+                                                </option>
+                                                <option value="B">B
+                                                </option>
+                                                <option value="C">C
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="totalMarks">total
+                                                marks</label>
+                                            <input type="text" name="totalMarks" class="form-control transport-text"
+                                                required="true">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="time">select
+                                                time</label>
+                                            <input type="time" name="time" class="form-control transport-text"
+                                                required="true">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="duration">duration
+                                            </label><select name="duration" class="form-control transport-text"
+                                                id="duration">
+                                                <option value="" selected>Select
+                                                </option>
+                                                <option value="1 HR">1 hour
+                                                </option>
+                                                <option value="2 HR">2 hour
+                                                </option>
+                                                <option value="3 HR">3 hour
+                                                </option>
+                                                <option value="4 HR">4 hour
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="date">select
+                                                date</label>
+                                            <input type="date" name="date" id="date-picker"
+                                                class="form-control transport-text" />
+                                        </div>
+                                        <div class="mt-1">
+                                            <button class="btn btn-warning" type="submit"
+                                                id="submit-btn">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class=" col-xl-8 col-lg-12 col-md-12 col-sm-12 list-section m-2"
+                                    style="overflow-x:auto;">
+                                    <div class="transport-list mt-3">
+                                        <div class="transport-table table-responsive">
+                                            <table class="table mt-3" id="tblSchedule">
+                                                <%if(examList && examList.length>0){%>
+                                                    <thead>
+                                                        <tr>
+                                                            <th> <input type="checkbox" id="rute-name" name="exam_name"
+                                                                    value="rute" class="m-1">exam
+                                                                name
+                                                            </th>
+                                                            <th class="text-align-left">
+                                                                subject
+                                                            </th>
+                                                            <th style="text-align: center;">
+                                                                class
+                                                            </th>
+                                                            <th style="text-align: center;">
+                                                                section
+                                                            </th>
+                                                            <th>total marks</th>
+
+                                                            <th class="text-align-left">
+                                                                time
+                                                            </th>
+                                                            <th>duration</th>
+                                                            <th class="text-align-left">
+                                                                date
+                                                            </th>
+                                                            <th>action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <% for(var i=0;i< examList.length;i++){%>
+                                                            <tr>
+                                                                <td class="exam"> <input type="checkbox" id="rute-name"
+                                                                        name="rutename" value="rute" class="m-2">
+                                                                    <%=examList[i].exam%>
+                                                                </td>
+
+                                                                <td class="subject">
+                                                                    <%=examList[i].subject%>
+                                                                </td>
+                                                                <td style="text-align: center;" class="class">
+                                                                    <%=examList[i].class%>
+                                                                </td>
+                                                                <td style="text-align: center;" class="section">
+                                                                    <%=examList[i].section%>
+                                                                </td>
+                                                                <td class="marks">
+                                                                    <%=examList[i].totalMarks%>
+                                                                </td>
+                                                                <td class="time">
+                                                                    <%=examList[i].time%>
+                                                                </td>
+                                                                <td class="duration">
+                                                                    <%=examList[i].duration%>
+                                                                </td>
+                                                                <td class="date">
+                                                                    <%=examList[i].date%>
+                                                                </td>
+                                                                <td><button type="button" class="btn_eye fa fa-eye 
+                                                                ">
+                                                                    </button>
+                                                                    <button type="button" value="<%=examList[i]._id%>"
+                                                                        class="btn_edit fa fa-pencil-square-o 
+                                                                    text-success" data-toggle="modal"
+                                                                        data-target="#myModal">
+                                                                    </button>
+                                                                    <button type="button" value="<%=examList[i]._id%>"
+                                                                        class="btn_delete fa fa-trash-o
+                                                                    text-danger">
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <%}%>
+                                                    </tbody>
+                                            </table>
+                                            <%}else{%>
+                                                <div>
+                                                    <h3 class="text-center text-danger"> schedule not added yet !!</h3>
+                                                </div>
+                                                <%}%>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                </div>
+    </div>
+    <script src="../../../js/examSchedule.js"></script>
+
+    <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+
+</html>

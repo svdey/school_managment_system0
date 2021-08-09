@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- font Awsome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
+    <% include ../../partials/css.ejs %>
+    <style>
+        body {
+            background: #f1f1f1;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+
+        .fa {
+            cursor: pointer;
+        }
+
+        .table_wrap {
+            min-height: 350px;
+        }
+
+        .form-control {
+            background-color: #f1f1f1;
+        }
+
+        .form {
+            background: white;
+        }
+
+        .fa {
+            cursor: pointer;
+        }
+
+        .table_wrap {
+            min-height: 350px;
+        }
+
+        .container {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .card {
+            border-radius: 0px;
+            height: 76px;
+        }
+
+        .card-body {
+            margin-top: -10px;
+            margin-right: 2px;
+        }
+
+        body {
+            background: #f1f1f1;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+
+        .vl {
+            height: 47px;
+            border-right: 1px solid rgb(146, 141, 141);
+            position: absolute;
+            right: 50%;
+            margin-top: 15px;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .information {
+                margin-top: 49px;
+
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .myInformation {
+                height: 475px;
+
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .inputType {
+                width: 5px;
+
+            }
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--Header Section-->
+        <% include ../../partials/header.ejs %>
+        <!-- Left side column. contains the logo and sidebar -->
+        <% include ../../partials/navbar.ejs %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
+                            <p>Home - <strong>Student</strong> </p>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-4">
+                            <div class="card" style="background-color: #08e1ae;
+                        background-image: linear-gradient(315deg, #08e1ae 0%, #98de5b 74%);">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <i class="fas fa-edit fa-2x left p-3"
+                                            style="color: white; text-align: center; margin-left: 40px;"></i>
+                                        <p style="margin-left: 15px;"><small>Upcoming Exam</small></p>
+                                    </div>
+                                    <div class="vl"></div>
+                                    <div class="card-body">
+                                        <h4 class="p-3">05</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-4">
+                            <div class="card" style="background: linear-gradient(120deg, #dd4b39, #FFFFFF);">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <i class="fas fa-money-bill-alt fa-2x text-danger p-3"
+                                            style="margin-left: 40px;"></i>
+                                        <p style="margin-left: 34px;"><small>Due Fees</small></p>
+                                    </div>
+                                    <div class=" vl">
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="p-3">10,000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-4">
+                            <div class="card" style="background-color: #abe9cd;
+                        background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+                        ">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <i class="fas fa-flag fa-2x p-3" style="margin-left: 40px; color: white;"></i>
+                                        <p style="margin-left: 30px;">Events</p>
+                                    </div>
+                                    <div class="vl"></div>
+                                    <div class="card-body">
+                                        <h4 class="p-3">10,000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-4">
+                            <div class="card" style="background-color: #fbb034;
+                        background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <i class="fas fa-folder fa-2x text-warning p-3" style="margin-left: 35px;"></i>
+                                        <p style="margin-left: 30px;">Teachers</p>
+                                    </div>
+                                    <div class="vl"></div>
+                                    <div class="card-body">
+                                        <h4 class="p-3">$ 10,000</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-6 mt-4">
+                            <div class="card myInformation" style="height: 373px;">
+                                <div class="row">
+                                    <div class="card-body">
+                                        <strong class="mine">My Information</strong>
+                                        <i class="fas fa-times" style="color: red; float: right"></i>
+                                        <i class="fas fa-sync"
+                                            style="color: green; margin-left: 8px; margin-right: 8px;float: right"></i>
+                                        <i class="fa fa-angle-down"
+                                            style="color: orange; margin-left: 5px;float: right"></i>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-md-4 col-xs-12 col-sm-4">
+                                                <div class="card" style="width:100px">
+                                                    <img class="card-img-top"
+                                                        src="https://www.w3schools.com/Bootstrap/img_avatar2.png" alt=" Card
+                                                        image" style="width:100%">
+                                                    <div class="card-body">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 col-xs-12 col-sm-12">
+                                                <ul style="margin-right: 10px;" type="none">
+                                                    <li style="margin-top: 4px;">Name: Md. Samir Ansari</li>
+                                                    <li style="margin-top: 4px;">Gender: Male</li>
+                                                    <li style="margin-top: 4px;">Father's name: Md. kalam
+                                                    </li>
+                                                    <li style="margin-top: 4px;">Mother's name:</li>
+                                                    <li style="margin-top: 4px;">DOB: 12/5/2020</li>
+                                                    <li style="margin-top: 4px;">Religion: Islam</li>
+                                                    <li style="margin-top: 4px;">Father's occupation: </li>
+                                                    <li style="margin-top: 4px;">E-mail: </li>
+                                                    <li style="margin-top: 4px;">Admission Date: </li>
+                                                    <li style="margin-top: 4px;">Section: A</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 mt-4 ml-0">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12">
+                                    <div class="card" style="min-height: 321px;">
+                                        <div class="card-body">
+                                            <strong class="mr-5">Notice Board</strong>
+                                            <i class="fas fa-times" style="color: red;float: right"></i>
+                                            <i class="fas fa-sync"
+                                                style="color: green; margin-left: 8px; margin-right: 8px;float: right"></i>
+                                            <i class="fa fa-angle-down"
+                                                style="color: orange; margin-left: 7px; float: right;"></i>
+                                            <hr />
+                                            <p>07 April, 2021 <small>5 min ago</small></p>
+                                            <p class="text-primary" style="margin-top: -15px;">Jannyfer Lopez</p>
+                                            <p style="margin-top: -15px;"><small>Lorem ipsum dolor sit, amet consectetur
+                                                    adipisicing
+                                                    elit. Dolore, at!</small></p>
+                                            <p><small>16 may, 2017</small></p>
+                                            <p class="text-warning">Killer Miller <small>16
+                                                    min
+                                                    ago</small></p>
+                                            <p><small>Lorem ipsum, dolor sit amet consectetur
+                                                    adipisicing
+                                                    elit. Aspernatur, illo!</small></p>
+                                            <p>16 may, 2017</p>Jannyfer Lopez</p>
+                                            <p><small>Lorem ipsum dolor sit, amet consectetur
+                                                    adipisicing.</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 mt-4">
+                            <div class="card" style="height: 300px;">
+                                <div class="card-body">
+                                    <span style="float: left;">All Expanses</span>
+                                    <form class="form-inline" style="float: right;">
+
+                                        <input type="email" class="form-control mr-2" placeholder="Enter email"
+                                            id="email"
+                                            style="height: 20px;width: 100px; float: right; border-radius: 10px;" />
+                                        <input type="password" class="form-control mr-2" placeholder="Enter password"
+                                            id="pwd"
+                                            style="height: 20px;width: 100px; float: right; border-radius: 10px;" />
+                                        <button type="button" class="btn btn-primary btn-sm mr-2"
+                                            style="height: 20px;width: 63px; float: right; border-radius: 10px; padding-top: 0px; padding-bottom: 4px; text-align: center;">
+                                            Submit</button>
+                                        <i class="fas fa-times" style="float: right; color: red;"></i>
+                                        <i class="fas fa-sync" style=" float: right; color: green; margin-left: 8px;
+                                                        margin-right: 8px;"></i>
+                                        <i class="fa fa-angle-down"
+                                            style="float: right; color: orange; margin-left: 7px;"></i>
+                                    </form>
+
+                                    <hr style="width: 100%; margin-top: 28px;">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-success table-sm">
+                                            <thead>
+                                                <th>
+                                                    <small>Day</small>
+                                                </th>
+                                                <th><small>Class</small></th>
+                                                <th><small>Subject</small></th>
+                                                <th><small>Section</small></th>
+                                                <th><small>Teacher</small></th>
+                                                <th><small>Time</small></th>
+                                                <th><small>Date</small></th>
+                                                <th><small>Action</small></th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <form>
+                                                            <div class="form-group form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input"
+                                                                        type="checkbox"><small>Sunday
+                                                                    </small></label>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                    <td><small>2</small></td>
+                                                    <td><small>Mathematics</small></td>
+                                                    <td><small>A</small></td>
+                                                    <td><small>Kazi Fahim</small></td>
+                                                    <td><small>11:00am - 12:00am</small></td>
+                                                    <td><small>20/06/2017</small></td>
+                                                    <td><small><i class="fas fa-times pull-right"
+                                                                style="color: red;"></i>
+                                                            <i class="fas fa-sync pull-right" style="color: green;"></i>
+                                                            <i class="fa fa-angle-down pull-right"
+                                                                style="color: orange;"></i></small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <form>
+                                                            <div class="form-group form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input"
+                                                                        type="checkbox"><small>Sunday
+                                                                    </small></label>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                    <td><small>2</small></td>
+                                                    <td><small>Mathematics</small></td>
+                                                    <td><small>A</small></td>
+                                                    <td><small>Kazi Fahim</small></td>
+                                                    <td><small>11:00am - 12:00am</small></td>
+                                                    <td><small>20/06/2017</small></td>
+                                                    <td><small><i class="fas fa-times pull-right"
+                                                                style="color: red;"></i>
+                                                            <i class="fas fa-sync pull-right" style="color: green;"></i>
+                                                            <i class="fa fa-angle-down pull-right"
+                                                                style="color: orange;"></i></small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <form>
+                                                            <div class="form-group form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input"
+                                                                        type="checkbox"><small>Sunday
+                                                                    </small></label>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                    <td><small>2</small></td>
+                                                    <td><small>Mathematics</small></td>
+                                                    <td><small>A</small></td>
+                                                    <td><small>Kazi Fahim</small></td>
+                                                    <td><small>11:00am - 12:00am</small></td>
+                                                    <td><small>20/06/2017</small></td>
+                                                    <td><small><i class="fas fa-times pull-right"
+                                                                style="color: red;"></i>
+                                                            <i class="fas fa-sync pull-right" style="color: green;"></i>
+                                                            <i class="fa fa-angle-down pull-right"
+                                                                style="color: orange;"></i></small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <form>
+                                                            <div class="form-group form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input"
+                                                                        type="checkbox"><small>Sunday
+                                                                    </small></label>
+                                                            </div>
+                                                        </form>
+                                                    </td>
+                                                    <td><small>2</small></td>
+                                                    <td><small>Mathematics</small></td>
+                                                    <td><small>A</small></td>
+                                                    <td><small>Kazi Fahim</small></td>
+                                                    <td><small>11:00am - 12:00am</small></td>
+                                                    <td><small>20/06/2017</small></td>
+                                                    <td><small><i class="fas fa-times pull-right"
+                                                                style="color: red;"></i>
+                                                            <i class="fas fa-sync pull-right" style="color: green;"></i>
+                                                            <i class="fa fa-angle-down pull-right"
+                                                                style="color: orange;"></i></small></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#studentform").submit(function (e) {
+                    e.preventDefault()
+                    let obj = {}
+                    let fd = new FormData(e.currentTarget)
+                    fd.forEach((val, key) => {
+                        obj[key] = val
+                    })
+                    console.log(obj)
+                })
+            });
+        </script>
+
+        </section>
+    </div>
+    <% include ../../partials/scriptsAdmin.ejs %>
+</body>
+
+</html>
